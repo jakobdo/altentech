@@ -1,0 +1,6 @@
+django
+django-stdimage
+
+ipython
+pylint
+flake8
