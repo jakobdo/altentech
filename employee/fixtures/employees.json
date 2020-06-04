@@ -9,5 +9,16 @@
     "description": "I am Jakob and I do stuff",
     "image": "employee/avatar-1577909_640.png"
   }
+},
+{
+  "model": "employee.employee",
+  "pk": 2,
+  "fields": {
+    "firstname": "Mikkel",
+    "lastname": "Hansen",
+    "jobtitle": "Software Developer",
+    "description": "Software developer that do stuff",
+    "image": "employee/avatar-1577909_640_fDaFF7O.png"
+  }
 }
 ]

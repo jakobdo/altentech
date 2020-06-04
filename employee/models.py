@@ -29,6 +29,9 @@ class Employee(models.Model):
         through='TechnologyLevel'
     )
 
+    class Meta:
+        ordering = ['firstname', 'lastname']
+
     def __str__(self):
         return f"{self.firstname} {self.lastname}"
 

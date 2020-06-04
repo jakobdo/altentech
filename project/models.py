@@ -1,6 +1,7 @@
 from django.db import models
 
 from client.models import Client
+from technology.models import Technology
 
 
 class Project(models.Model):
@@ -11,6 +12,7 @@ class Project(models.Model):
         related_name="projects",
         on_delete=models.CASCADE
     )
+    technologies = models.ManyToManyField(Technology)
 
     def __str__(self):
         return self.name

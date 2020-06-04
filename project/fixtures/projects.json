@@ -1,0 +1,26 @@
+[
+{
+  "model": "project.project",
+  "pk": 1,
+  "fields": {
+    "name": "Automate import of xxx",
+    "description": "Import a lot of... and cool stuff",
+    "client": 1,
+    "technologies": [
+      2
+    ]
+  }
+},
+{
+  "model": "project.project",
+  "pk": 2,
+  "fields": {
+    "name": "Build a new device",
+    "description": "Build a new device",
+    "client": 2,
+    "technologies": [
+      1
+    ]
+  }
+}
+]

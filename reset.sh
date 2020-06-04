@@ -18,7 +18,9 @@ DJANGO_SUPERUSER_PASSWORD=Abc12345 \
 python manage.py createsuperuser --noinput
 
 # Load test data
-#python manage.py loaddata clients
-#python manage.py loaddata employees
-#python manage.py loaddata projects
-#python manage.py loaddata technologies
+python manage.py loaddata clients
+python manage.py loaddata technologies
+python manage.py loaddata employees
+python manage.py loaddata technologies
+python manage.py loaddata projects
+
