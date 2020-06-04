@@ -29,6 +29,9 @@ class Employee(models.Model):
         through='TechnologyLevel'
     )
 
+    def __str__(self):
+        return f"{self.firstname} {self.lastname}"
+
 
 class TechnologyLevel(models.Model):
     class Levels(models.IntegerChoices):

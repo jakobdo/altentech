@@ -1,3 +1,10 @@
 from django.contrib import admin
 
-# Register your models here.
+from technology.models import Technology
+
+
+class TechnologyAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Technology, TechnologyAdmin)

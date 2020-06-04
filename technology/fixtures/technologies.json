@@ -1,0 +1,26 @@
+[
+{
+  "model": "technology.technology",
+  "pk": 1,
+  "fields": {
+    "name": "GIT",
+    "description": "Git is used to source control codebase!"
+  }
+},
+{
+  "model": "technology.technology",
+  "pk": 2,
+  "fields": {
+    "name": "Python",
+    "description": "Python is a smart programmin tool"
+  }
+},
+{
+  "model": "technology.technology",
+  "pk": 3,
+  "fields": {
+    "name": "Django",
+    "description": "Django is a web framework based on Python"
+  }
+}
+]

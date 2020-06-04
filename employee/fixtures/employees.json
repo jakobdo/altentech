@@ -1,0 +1,13 @@
+[
+{
+  "model": "employee.employee",
+  "pk": 1,
+  "fields": {
+    "firstname": "Jakob",
+    "lastname": "Damgaard M\u00f8ller",
+    "jobtitle": "Software/Python/Web Developer",
+    "description": "I am Jakob and I do stuff",
+    "image": "employee/avatar-1577909_640.png"
+  }
+}
+]
