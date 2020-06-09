@@ -5,4 +5,28 @@
 {% block content %}
 <p>{{ object.name }}</p>
 <p>{% trans "Description" %}: {{ object.description }}</p>
+
+{% if object.project_set.all %}
+<p>{% trans "Projects" %}: </p>
+<ul>
+    {% for project in object.project_set.all %}
+    <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+        {% if project.technologies.all %}
+            {% for tech in project.technologies.all %}
+                <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
+            {% endfor %}
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if object.employee_set.all %}
+<p>{% trans "Consultants" %}: </p>
+<ul>
+    {% for consultant in object.employee_set.all %}
+        <li><a href="{% url 'employees-detail' consultant.slug %}">{{ consultant.get_full_name }}</a></li>
+    {% endfor %}
+</ul>
+{% endif %}
 {% endblock %}
