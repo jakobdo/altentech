@@ -3,32 +3,24 @@
 {% load i18n %}
 
 {% block content %}
-<p>{{ object.name }}</p>
-<p>{% trans "Client" %}: {{ object.client.name }}</p>
+<h3>{{ object.name }}</h3>
+<p>{% trans "Client" %}: <a href="{% url 'clients-detail' object.client.slug %}">{{ object.client.name }}</a></p>
 <p>{% trans "Description" %}: {{ object.description }}</p>
 
-{% if object.project_set.all %}
-    <p>{% trans "Projects" %}: </p>
+{% if object.consultants.all %}
+    <p>{% trans "Consultants" %}: </p>
     <ul>
-    {% for project in object.project_set.all %}
-        <li>{{ project.name }}
-            {% if project.technologies.all %}
-                <ul>
-                {% for tech in project.technologies.all %}
-                    <li>{{ tech.name }}</li>
-                {% endfor %}
-                </ul>
-            {% endif %}
-        </li>
+    {% for consultant in object.consultants.all %}
+        <li><a href="{% url 'employees-detail' consultant.slug %}">{{ consultant.get_full_name }}</a></li>
     {% endfor %}
     </ul>
 {% endif %}
 
-{% if object.technologylevel_set.all %}
+{% if object.technologies.all %}
     <p>{% trans "Technologies" %}: </p>
     <ul>
-    {% for technology_level in object.technologylevel_set.all %}
-        <li>{{ technology_level.technology.name }} - {{ technology_level.get_level_display }}</li>
+    {% for tech in object.technologies.all %}
+        <li><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></li>
     {% endfor %}
     </ul>
 {% endif %}

@@ -4,39 +4,27 @@
 
 {% block content %}
 <div class="row">
-    <div class="col s12 m4">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}">
-                <span class="card-title">{{ object.get_full_name }}</span>
-            </div>
-            <div class="card-content">
-                <p>{{ object.description }}</p>
-            </div>
-            <div class="card-action">
-                <a href="#">This is a link</a>
-            </div>
+    <div class="col s12">
+        <div class="col s2">
+            <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img">
+        </div>
+        <div class="col s10">
+            <h5>{{ object.get_full_name }}</h5>
+            <p>{{ object.jobtitle }}</p>
+            <p>{{ object.description }}</p>
         </div>
     </div>
 </div>
-
-
-<p><img src=""></p>
-<p>{{ object.get_full_name }}</p>
-<p>{% trans "Jobtitle" %}: {{ object.jobtitle }}</p>
-<p>{% trans "Description" %}: {{ object.description }}</p>
 
 {% if object.project_set.all %}
 <p>{% trans "Projects" %}: </p>
 <ul>
     {% for project in object.project_set.all %}
-    <li>{{ project.name }}
+    <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
         {% if project.technologies.all %}
-        <ul>
             {% for tech in project.technologies.all %}
-            <li>{{ tech.name }}</li>
+                <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
             {% endfor %}
-        </ul>
         {% endif %}
     </li>
     {% endfor %}
@@ -47,7 +35,11 @@
 <p>{% trans "Technologies" %}: </p>
 <ul>
     {% for technology_level in object.technologylevel_set.all %}
-    <li>{{ technology_level.technology.name }} - {{ technology_level.get_level_display }}</li>
+        <li><a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+            {% for x in ""|ljust:technology_level.level %}
+            <i class="material-icons">star</i>
+            {% endfor %}
+        </li>
     {% endfor %}
 </ul>
 {% endif %}

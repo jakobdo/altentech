@@ -8,15 +8,15 @@
 <p>{% trans "Description" %}: {{ object.description }}</p>
 <p>{% trans "Homepage" %}: <a target="_blank" href="{{ object.url }}">{{ object.url }}</a></p>
 
-{% if object.project_set.all %}
+{% if object.projects.all %}
     <p>{% trans "Projects" %}: </p>
     <ul>
-    {% for project in object.project_set.all %}
-        <li>{{ project.name }}
+    {% for project in object.projects.all %}
+        <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
             {% if project.technologies.all %}
                 <ul>
                 {% for tech in project.technologies.all %}
-                    <li>{{ tech.name }}</li>
+                    <li><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></li>
                 {% endfor %}
                 </ul>
             {% endif %}

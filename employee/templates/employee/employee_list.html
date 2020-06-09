@@ -4,11 +4,21 @@
 
 {% block content %}
 <h1>{% trans "Consultants" %}</h1>
-<div class="collection">
+<div class="row">
     {% for employee in object_list %}
-        <a href="{% url 'employees-detail' employee.slug %}" class="collection-item">{{ employee.get_full_name }}</a>
+        <div class="col s12 m6">
+            <div class="row">
+                <div class="col s2">
+                    <img src="{{ MEDIA_URL }}{{ employee.image.thumbnail }}" alt="{{ employee.get_full_name }}" class="circle responsive-img">
+                </div>
+                <div class="col s10">
+                    <a href="{% url 'employees-detail' employee.slug %}" class="collection-item">{{ employee.get_full_name }}</a>
+                    <p>{{ employee.jobtitle }}</p>
+                </div>
+            </div>
+        </div>
     {% empty %}
-        <div class="collection-item">{% trans "No consultants yet." %}</div>
+        <div class="col s12">{% trans "No consultants yet." %}</div>
     {% endfor %}
 </div>
 {% endblock %}
