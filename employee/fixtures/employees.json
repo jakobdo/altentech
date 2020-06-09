@@ -5,6 +5,7 @@
   "fields": {
     "firstname": "Jakob",
     "lastname": "Damgaard M\u00f8ller",
+    "slug": "jakob-damgaard-moller",
     "jobtitle": "Software/Python/Web Developer",
     "description": "I am Jakob and I do stuff",
     "image": "employee/avatar-1577909_640.png"
@@ -16,9 +17,22 @@
   "fields": {
     "firstname": "Mikkel",
     "lastname": "Hansen",
+    "slug": "mikkel-hansen",
     "jobtitle": "Software Developer",
     "description": "Software developer that do stuff",
     "image": "employee/avatar-1577909_640_fDaFF7O.png"
+  }
+},
+{
+  "model": "employee.employee",
+  "pk": 3,
+  "fields": {
+    "firstname": "Malene",
+    "lastname": "Platt",
+    "slug": "malene-platt",
+    "jobtitle": "ScrumMaster",
+    "description": "Scrum Master",
+    "image": "employee/avatar-1577909_640_mvx8t39.png"
   }
 }
 ]

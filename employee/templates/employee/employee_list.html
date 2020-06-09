@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Consultants" %}</h1>
+<div class="collection">
+    {% for employee in object_list %}
+        <a href="{% url 'employees-detail' employee.slug %}" class="collection-item">{{ employee.get_full_name }}</a>
+    {% empty %}
+        <div class="collection-item">{% trans "No consultants yet." %}</div>
+    {% endfor %}
+</div>
+{% endblock %}

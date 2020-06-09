@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Clients" %}</h1>
+<div class="collection">
+    {% for client in object_list %}
+        <a href="{% url 'clients-detail' client.slug %}" class="collection-item">{{ client }}</a>
+    {% empty %}
+        <div class="collection-item">{% trans "No clients yet." %}</div>
+    {% endfor %}
+</div>
+{% endblock %}

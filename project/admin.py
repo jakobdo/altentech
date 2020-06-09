@@ -4,7 +4,7 @@ from project.models import Project
 
 
 class ProjectAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("name", )}
 
 
 admin.site.register(Project, ProjectAdmin)

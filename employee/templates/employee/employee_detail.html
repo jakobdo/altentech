@@ -1,0 +1,54 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<div class="row">
+    <div class="col s12 m4">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}">
+                <span class="card-title">{{ object.get_full_name }}</span>
+            </div>
+            <div class="card-content">
+                <p>{{ object.description }}</p>
+            </div>
+            <div class="card-action">
+                <a href="#">This is a link</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<p><img src=""></p>
+<p>{{ object.get_full_name }}</p>
+<p>{% trans "Jobtitle" %}: {{ object.jobtitle }}</p>
+<p>{% trans "Description" %}: {{ object.description }}</p>
+
+{% if object.project_set.all %}
+<p>{% trans "Projects" %}: </p>
+<ul>
+    {% for project in object.project_set.all %}
+    <li>{{ project.name }}
+        {% if project.technologies.all %}
+        <ul>
+            {% for tech in project.technologies.all %}
+            <li>{{ tech.name }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% if object.technologylevel_set.all %}
+<p>{% trans "Technologies" %}: </p>
+<ul>
+    {% for technology_level in object.technologylevel_set.all %}
+    <li>{{ technology_level.technology.name }} - {{ technology_level.get_level_display }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}

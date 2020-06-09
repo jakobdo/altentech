@@ -1,0 +1,14 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Technologies" %}</h1>
+<div class="collection">
+    {% for technology in object_list %}
+        <a href="{% url 'technologies-detail' technology.slug %}" class="collection-item">{{ technology }}</a>
+    {% empty %}
+        <div class="collection-item">{% trans "No technologies yet." %}</div>
+    {% endfor %}
+</div>
+{% endblock %}

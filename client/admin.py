@@ -4,7 +4,7 @@ from client.models import Client
 
 
 class ClientAdmin(admin.ModelAdmin):
-    pass
+    prepopulated_fields = {"slug": ("name", )}
 
 
 admin.site.register(Client, ClientAdmin)

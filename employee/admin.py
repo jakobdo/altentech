@@ -8,6 +8,7 @@ class TechnologyLevelInline(admin.TabularInline):
 
 
 class EmployeeAdmin(admin.ModelAdmin):
+    prepopulated_fields = {"slug": ("firstname", "lastname")}
     inlines = [
         TechnologyLevelInline,
     ]

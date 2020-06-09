@@ -4,6 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "Company 1",
+    "slug": "company-1",
     "description": "Company 1 is working with...",
     "url": "https://www.company1.dk",
     "image": "client/startup-593341_1280.jpg"
@@ -14,6 +15,7 @@
   "pk": 2,
   "fields": {
     "name": "Company 2",
+    "slug": "company-2",
     "description": "Company 2 is very nice",
     "url": "https://www.company2.dk",
     "image": "client/paper-3213924_1280.jpg"

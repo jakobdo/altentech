@@ -3,4 +3,5 @@ django-stdimage
 
 ipython
 pylint
+pylint-django
 flake8

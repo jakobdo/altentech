@@ -1,0 +1,35 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<p>{{ object.name }}</p>
+<p>{% trans "Client" %}: {{ object.client.name }}</p>
+<p>{% trans "Description" %}: {{ object.description }}</p>
+
+{% if object.project_set.all %}
+    <p>{% trans "Projects" %}: </p>
+    <ul>
+    {% for project in object.project_set.all %}
+        <li>{{ project.name }}
+            {% if project.technologies.all %}
+                <ul>
+                {% for tech in project.technologies.all %}
+                    <li>{{ tech.name }}</li>
+                {% endfor %}
+                </ul>
+            {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+{% endif %}
+
+{% if object.technologylevel_set.all %}
+    <p>{% trans "Technologies" %}: </p>
+    <ul>
+    {% for technology_level in object.technologylevel_set.all %}
+        <li>{{ technology_level.technology.name }} - {{ technology_level.get_level_display }}</li>
+    {% endfor %}
+    </ul>
+{% endif %}
+{% endblock %}

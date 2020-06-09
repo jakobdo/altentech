@@ -4,6 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "GIT",
+    "slug": "git",
     "description": "Git is used to source control codebase!"
   }
 },
@@ -12,6 +13,7 @@
   "pk": 2,
   "fields": {
     "name": "Python",
+    "slug": "python",
     "description": "Python is a smart programmin tool"
   }
 },
@@ -20,7 +22,17 @@
   "pk": 3,
   "fields": {
     "name": "Django",
+    "slug": "django",
     "description": "Django is a web framework based on Python"
+  }
+},
+{
+  "model": "technology.technology",
+  "pk": 4,
+  "fields": {
+    "name": "Scrum",
+    "slug": "scrum",
+    "description": "Scrum is the best!"
   }
 }
 ]

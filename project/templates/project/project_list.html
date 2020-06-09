@@ -1,0 +1,15 @@
+{% extends "master.html" %}
+
+
+{% load i18n %}
+
+{% block content %}
+<h1>{% trans "Projects" %}</h1>
+<div class="collection">
+    {% for project in object_list %}
+        <a href="{% url 'projects-detail' project.slug %}" class="collection-item">{{ project }}</a>
+    {% empty %}
+        <div class="collection-item">{% trans "No projects yet." %}</div>
+    {% endfor %}
+</div>
+{% endblock %}

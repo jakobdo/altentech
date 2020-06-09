@@ -1,0 +1,39 @@
+[
+    {
+      "model": "employee.technologylevel",
+      "pk": 1,
+      "fields": {
+        "employee": 1,
+        "technology": 2,
+        "level": 3
+      }
+    },
+    {
+      "model": "employee.technologylevel",
+      "pk": 2,
+      "fields": {
+        "employee": 1,
+        "technology": 3,
+        "level": 3
+      }
+    },
+    {
+      "model": "employee.technologylevel",
+      "pk": 3,
+      "fields": {
+        "employee": 1,
+        "technology": 1,
+        "level": 2
+      }
+    },
+    {
+      "model": "employee.technologylevel",
+      "pk": 4,
+      "fields": {
+        "employee": 3,
+        "technology": 4,
+        "level": 3
+      }
+    }
+]
+    

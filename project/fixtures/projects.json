@@ -4,6 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "Automate import of xxx",
+    "slug": "automate-import-of-xxx",
     "description": "Import a lot of... and cool stuff",
     "client": 1,
     "technologies": [
@@ -16,6 +17,7 @@
   "pk": 2,
   "fields": {
     "name": "Build a new device",
+    "slug": "build-a-new-device",
     "description": "Build a new device",
     "client": 2,
     "technologies": [

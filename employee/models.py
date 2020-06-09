@@ -8,6 +8,7 @@ from technology.models import Technology
 class Employee(models.Model):
     firstname = models.CharField(max_length=100)
     lastname = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
     jobtitle = models.CharField(max_length=100)
     description = models.TextField()
     image = JPEGField(
@@ -32,8 +33,11 @@ class Employee(models.Model):
     class Meta:
         ordering = ['firstname', 'lastname']
 
-    def __str__(self):
+    def get_full_name(self):
         return f"{self.firstname} {self.lastname}"
+
+    def __str__(self):
+        return self.get_full_name()
 
 
 class TechnologyLevel(models.Model):
@@ -46,3 +50,6 @@ class TechnologyLevel(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)
     technology = models.ForeignKey(Technology, on_delete=models.CASCADE)
     level = models.SmallIntegerField(choices=Levels.choices)
+
+    class Meta:
+        ordering = ['-level', 'technology__name']

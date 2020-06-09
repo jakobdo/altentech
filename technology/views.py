@@ -1,3 +1,11 @@
-from django.shortcuts import render
+from django.views.generic import DetailView, ListView
 
-# Create your views here.
+from technology.models import Technology
+
+
+class TechnologyDetailView(DetailView):
+    model = Technology
+
+
+class TechnologyListView(ListView):
+    model = Technology

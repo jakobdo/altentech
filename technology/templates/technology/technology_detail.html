@@ -1,0 +1,8 @@
+{% extends "master.html" %}
+
+{% load i18n %}
+
+{% block content %}
+<p>{{ object.name }}</p>
+<p>{% trans "Description" %}: {{ object.description }}</p>
+{% endblock %}

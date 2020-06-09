@@ -4,6 +4,7 @@ from stdimage import JPEGField
 
 class Client(models.Model):
     name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
     description = models.TextField()
     url = models.URLField(blank=True, null=True)
     image = JPEGField(
