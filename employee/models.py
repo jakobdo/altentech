@@ -2,6 +2,7 @@ from django.db import models
 from django.utils.translation import gettext
 from stdimage import JPEGField
 
+from tag.models import Tag
 from technology.models import Technology
 
 
@@ -29,6 +30,7 @@ class Employee(models.Model):
         Technology,
         through='TechnologyLevel'
     )
+    tags = models.ManyToManyField(Tag)
 
     class Meta:
         ordering = ['firstname', 'lastname']

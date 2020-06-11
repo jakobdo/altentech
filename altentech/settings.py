@@ -25,7 +25,7 @@ SECRET_KEY = 'jm_5tn&2t8jv7n5sc-^^(22tqxxh9db_rguul$nj*qhh!t(w$y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['192.168.13.46', 'localhost']
 
 
 # Application definition
@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'employee.apps.EmployeeConfig',
     'project.apps.ProjectConfig',
     'technology.apps.TechnologyConfig',
+    'tag.apps.TagConfig',
 ]
 
 MIDDLEWARE = [

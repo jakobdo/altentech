@@ -12,16 +12,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Technology',
+            name='Tag',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('name', models.CharField(max_length=100, unique=True)),
                 ('slug', models.SlugField(unique=True)),
-                ('description', models.TextField()),
             ],
-            options={
-                'verbose_name_plural': 'technologies',
-                'ordering': ['name'],
-            },
         ),
     ]
