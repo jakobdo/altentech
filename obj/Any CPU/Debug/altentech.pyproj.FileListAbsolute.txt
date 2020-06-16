@@ -1,3 +1,0 @@
-C:\Users\rstanuliony\source\repos\altentech\obj\Any CPU\Debug\altentech.pyproj.CoreCompileInputs.cache
-C:\Users\rstanuliony\source\repos\altentech\bin\Microsoft.PythonTools.WebRole.dll
-C:\Users\rstanuliony\source\repos\altentech\bin\wfastcgi.py
