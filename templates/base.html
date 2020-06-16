@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load i18n static %}
 
 <!DOCTYPE html>
 <html>
@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="{% static "employee/css/alten.css" %}">
+  
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -19,13 +21,13 @@
     <header>
         <nav>
             <div class="nav-wrapper container">
-                <a href="{% url 'index' %}" class="brand-logo">Alten Danmark</a>
+                <a href="{% url 'index' %}" class="brand-logo">ALTEN Danmark</a>
                 <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{% url 'employees-list' %}">{% trans "Consultants" %}</a></li>
-                    <li><a href="{% url 'projects-list' %}">{% trans "Projects" %}</a></li>
-                    <li><a href="{% url 'clients-list' %}">{% trans "Clients" %}</a></li>
-                    <li><a href="{% url 'technologies-list' %}">{% trans "Technologies" %}</a></li>
+                    <li><a href="{% url 'employees-list' %}">{% trans "CONSULTANTS" %}</a></li>
+                    <li><a href="{% url 'projects-list' %}">{% trans "PROJECTS" %}</a></li>
+                    <li><a href="{% url 'clients-list' %}">{% trans "CLIENTS" %}</a></li>
+                    <li><a href="{% url 'technologies-list' %}">{% trans "TECHNOLOGIES" %}</a></li>
                 </ul>
             </div>
         </nav>

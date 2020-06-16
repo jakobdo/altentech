@@ -23,6 +23,11 @@ class Employee(models.Model):
                 "width": 100,
                 "height": 100,
                 "crop": True
+            },
+            'medium': {
+                "width": 300,
+                "height": 300,
+                "crop": True
             }
         }
     )

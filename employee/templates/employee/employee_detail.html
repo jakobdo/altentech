@@ -3,44 +3,58 @@
 {% load i18n %}
 
 {% block content %}
+<body style="background-color: #E6E6E9;">
+
 <div class="row">
-    <div class="col s12">
-        <div class="col s2">
-            <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img">
-        </div>
-        <div class="col s10">
-            <h5>{{ object.get_full_name }}</h5>
-            <p>{{ object.jobtitle }}</p>
-            <p>{{ object.description }}</p>
-        </div>
+    <div style="padding-top: 20%">
+        <div class="card" style="text-align: center;">
+            <div  style="position:relative; top: -150px;">
+                <img  src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+            </div>
+            <div style="position:relative; top:-100px;align-content:center;">
+                <h5 class="center-align" style="color: #043962;"><b>{{ object.get_full_name }}</b></h5>
+                <p class="center-align" style="position:relative; top: -10px; color: #008BD2;">{{ object.jobtitle }}</p>
+                <p class="left-align" style="padding-left: 15%; padding-right: 15%;">{{ object.description|linebreaksbr }}</p>
+            </div>
+        </div>    
     </div>
 </div>
 
-{% if object.project_set.all %}
-<p>{% trans "Projects" %}: </p>
-<ul>
-    {% for project in object.project_set.all %}
-    <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
-        {% if project.technologies.all %}
-            {% for tech in project.technologies.all %}
-                <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
+<div class="card" style="text-align: center;">
+    {% if object.technologylevel_set.all %}
+    <div>
+        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
+    </div>
+    <div>
+        <ul>
+            {% for technology_level in object.technologylevel_set.all %}
+                <li><a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                    {% for x in ""|ljust:technology_level.level %}
+                    <i class="material-icons">star</i>
+                    {% endfor %}
+                </li>
             {% endfor %}
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
+        </ul>
+    </div>
+    {% endif %}
+</div>
+
+<div class="card" style="text-align: center;">
+    {% if object.project_set.all %}
+    <p>{% trans "Projects" %} </p>
+    <ul>
+        {% for project in object.project_set.all %}
+        <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+            {% if project.technologies.all %}
+                {% for tech in project.technologies.all %}
+                    <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
+                {% endfor %}
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 
-{% if object.technologylevel_set.all %}
-<p>{% trans "Technologies" %}: </p>
-<ul>
-    {% for technology_level in object.technologylevel_set.all %}
-        <li><a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
-            {% for x in ""|ljust:technology_level.level %}
-            <i class="material-icons">star</i>
-            {% endfor %}
-        </li>
-    {% endfor %}
-</ul>
-{% endif %}
+ </body>
 {% endblock %}
