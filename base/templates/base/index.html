@@ -4,7 +4,7 @@
 
 {% block base_content %}
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "employee/gfx/parallax1.jpg" %}"></div>
+    <div class="parallax"><img src="{% static "base/gfx/parallax1.jpg" %}"></div>
 </div>
 <div class="section white">
     <div class="row container">
@@ -13,16 +13,16 @@
     </div>
 </div>
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "employee/gfx/parallax2.jpg" %}"></div>
+    <div class="parallax"><img src="{% static "base/gfx/parallax2.jpg" %}"></div>
 </div>
 <div class="section white">
     <div class="row container">
-        <h2 class="header">Consultants</h2>
-        <p class="grey-text text-darken-3 lighten-3">Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+        <h2 class="header">{{ object.get_full_name }}</h2>
+        <p class="grey-text text-darken-3 lighten-3">{{ object.description }}</p>
     </div>
 </div>
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "employee/gfx/parallax3.jpg" %}"></div>
+    <div class="parallax"><img src="{% static "base/gfx/parallax3.jpg" %}"></div>
 </div>
 <div class="section white">
     <div class="row container">
@@ -31,7 +31,7 @@
     </div>
 </div>
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "employee/gfx/parallax4.jpg" %}"></div>
+    <div class="parallax"><img src="{% static "base/gfx/parallax4.jpg" %}"></div>
 </div>
 {% endblock %}
 

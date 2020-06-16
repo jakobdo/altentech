@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'stdimage',
+    'base.apps.BaseConfig',
     'client.apps.ClientConfig',
     'employee.apps.EmployeeConfig',
     'project.apps.ProjectConfig',
