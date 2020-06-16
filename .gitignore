@@ -136,6 +136,12 @@ dmypy.json
 .pyre/
 
 # End of https://www.toptal.com/developers/gitignore/api/django
-.vscode
-
+.vscode/
+.vs/
+obj/
 bin/
+static/
+altentech.pyproj
+altentech.sln
+altentech.pyproj.user
+altentech1.pyproj
