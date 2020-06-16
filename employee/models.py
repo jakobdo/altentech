@@ -50,8 +50,8 @@ class Employee(models.Model):
 class TechnologyLevel(models.Model):
     class Levels(models.IntegerChoices):
         BEGINNER = 1, gettext('Beginner')
-        INTERMEDIATE = 2, gettext('Intermediate')
-        ADVANCED = 3, gettext('Advanced')
+        INTERMEDIATE = 3, gettext('Intermediate')
+        ADVANCED = 5, gettext('Advanced')
         __empty__ = gettext('(Unknown)')
 
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE)

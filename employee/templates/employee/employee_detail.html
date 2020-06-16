@@ -25,16 +25,30 @@
     <div>
         <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
     </div>
-    <div>
-        <ul>
+    <div class="center-align">
+        <div style="width: 300px; margin: auto;">
+        <table class="table">
             {% for technology_level in object.technologylevel_set.all %}
-                <li><a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
-                    {% for x in ""|ljust:technology_level.level %}
-                    <i class="material-icons">star</i>
+                <tr>
+                    <th>
+                        <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                    </th>
+                    <td>
+                        {% for x in ""|ljust:technology_level.level %}
+                        <i class="material-icons">star</i>
                     {% endfor %}
-                </li>
+                    {% if technology_level.level == 3 %}
+                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                    {% endif %}
+
+                    {% if technology_level.level == 1 %}
+                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                    {% endif %}
+                    </td>
+                </tr>
             {% endfor %}
-        </ul>
+        </table>
+        </div>
     </div>
     {% endif %}
 </div>

@@ -23,10 +23,11 @@
     {% for employee in object_list %}
     <div class="col s12 m6 l4">
         <div class="card">
-            <div class="card-image">
-                <img src="{{ MEDIA_URL }}{{ employee.image.thumbnail }}">
-            </div>
-            <div class="card-content">
+            <div class="card-content center-align">
+                <div>
+                    <img class="circle responsive-img" src="{{ MEDIA_URL }}{{ employee.image.medium }}">
+                </div>
+                
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>
                 <a href="{% url 'employees-detail' slug=employee.slug %}">Link</a>
