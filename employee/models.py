@@ -60,3 +60,24 @@ class TechnologyLevel(models.Model):
 
     class Meta:
         ordering = ['-level', 'technology__name']
+
+    def __str__(self):
+        return f"{self.technology} - {self.level}"
+
+
+class Experience(models.Model):
+    employee = models.ForeignKey(
+        Employee,
+        on_delete=models.CASCADE,
+        related_name="jobs"
+    )
+    start = models.DateField()
+    company = models.CharField(max_length=100)
+    job_title = models.CharField(max_length=100)
+    description = models.TextField()
+
+    class Meta:
+        ordering = ['-start']
+
+    def __str__(self):
+        return f"{self.company} - {self.job_title}"

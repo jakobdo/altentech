@@ -3,8 +3,6 @@
 {% load i18n %}
 
 {% block content %}
-<body style="background-color: #E6E6E9;">
-
 <div class="row">
     <div style="padding-top: 20%">
         <div class="card" style="text-align: center;">
@@ -20,11 +18,9 @@
     </div>
 </div>
 
-<div class="card" style="text-align: center;">
-    {% if object.technologylevel_set.all %}
-    <div>
-        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
-    </div>
+{% if object.technologylevel_set.all %}
+<div class="card center-align">
+    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
     <div class="center-align">
         <div style="width: 300px; margin: auto;">
         <table class="table">
@@ -53,22 +49,45 @@
     {% endif %}
 </div>
 
-<div class="card" style="text-align: center;">
-    {% if object.project_set.all %}
-    <p>{% trans "Projects" %} </p>
-    <ul>
-        {% for project in object.project_set.all %}
-        <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
-            {% if project.technologies.all %}
-                {% for tech in project.technologies.all %}
-                    <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
-                {% endfor %}
-            {% endif %}
-        </li>
-        {% endfor %}
-    </ul>
-</div>
+{% if object.project_set.all %}
+    <div class="card center-align">
+        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Projects" %}</b></h5>
+        <ul>
+            {% for project in object.project_set.all %}
+            <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+                {% if project.technologies.all %}
+                    {% for tech in project.technologies.all %}
+                        <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
+                    {% endfor %}
+                {% endif %}
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 {% endif %}
 
- </body>
+{% if object.jobs.all %}
+    <div class="card center-align">
+        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Experience" %}</b></h5>
+        {% for job in object.jobs.all %}
+            <div class="row">
+            {% if forloop.counter|divisibleby:"2" %}
+                <div class="col s5">
+                    <div class="right-align">{{ job.company }}</div>
+                    <div class="left-align">{{ job.description}}</div>
+                </div>
+                <div class="col s2 center-align">{{ job.start|date:"Y" }}</div>
+                <div class="col s5">&nbsp;</div>
+            {% else %}
+                <div class="col s5">&nbsp;</div>
+                <div class="col s2 center-align">{{ job.start|date:"Y" }}</div>
+                <div class="col s5">
+                    <div class="left-align">{{ job.company }}</div>
+                    <div class="right-align">{{ job.description}}</div>
+                </div>
+            {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}
 {% endblock %}
