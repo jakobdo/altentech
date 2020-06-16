@@ -29,6 +29,7 @@
             <div class="card-content">
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>
+                <a href="{% url 'employees-detail' slug=employee.slug %}">Link</a>
             </div>
         </div>
     </div>
