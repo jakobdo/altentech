@@ -1,20 +1,26 @@
 {% extends "master.html" %}
 
-{% load i18n %}
+{% load i18n static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "base/css/timeline.css" %}">
+{% endblock %}
 
 {% block content %}
 <div class="row">
     <div style="padding-top: 20%">
         <div class="card" style="text-align: center;">
-            <div  style="position:relative; top: -150px;">
-                <img  src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+            <div style="position:relative; top: -150px;">
+                <img src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}"
+                    class="circle responsive-img z-depth-3">
             </div>
             <div style="position:relative; top:-100px;align-content:center;">
                 <h5 class="center-align" style="color: #043962;"><b>{{ object.get_full_name }}</b></h5>
                 <p class="center-align" style="position:relative; top: -10px; color: #008BD2;">{{ object.jobtitle }}</p>
-                <p class="left-align" style="padding-left: 15%; padding-right: 15%;">{{ object.description|linebreaksbr }}</p>
+                <p class="left-align" style="padding-left: 15%; padding-right: 15%;">
+                    {{ object.description|linebreaksbr }}</p>
             </div>
-        </div>    
+        </div>
     </div>
 </div>
 
@@ -23,71 +29,70 @@
     <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
     <div class="center-align">
         <div style="width: 300px; margin: auto;">
-        <table class="table">
-            {% for technology_level in object.technologylevel_set.all %}
+            <table class="table">
+                {% for technology_level in object.technologylevel_set.all %}
                 <tr>
                     <th>
-                        <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                        <a
+                            href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
                     </th>
                     <td>
                         {% for x in ""|ljust:technology_level.level %}
                         <i class="material-icons">star</i>
-                    {% endfor %}
-                    {% if technology_level.level == 3 %}
+                        {% endfor %}
+                        {% if technology_level.level == 3 %}
                         <i class="material-icons">star_border</i><i class="material-icons">star_border</i>
-                    {% endif %}
+                        {% endif %}
 
-                    {% if technology_level.level == 1 %}
-                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i><i class="material-icons">star_border</i>
-                    {% endif %}
+                        {% if technology_level.level == 1 %}
+                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i><i
+                            class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                        {% endif %}
                     </td>
                 </tr>
-            {% endfor %}
-        </table>
+                {% endfor %}
+            </table>
         </div>
     </div>
     {% endif %}
 </div>
 
 {% if object.project_set.all %}
-    <div class="card center-align">
-        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Projects" %}</b></h5>
-        <ul>
-            {% for project in object.project_set.all %}
-            <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
-                {% if project.technologies.all %}
-                    {% for tech in project.technologies.all %}
-                        <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
-                    {% endfor %}
-                {% endif %}
-            </li>
+<div class="card center-align">
+    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Projects" %}</b></h5>
+    <ul>
+        {% for project in object.project_set.all %}
+        <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+            {% if project.technologies.all %}
+            {% for tech in project.technologies.all %}
+            <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
             {% endfor %}
-        </ul>
-    </div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 {% endif %}
 
 {% if object.jobs.all %}
-    <div class="card center-align">
-        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Experience" %}</b></h5>
+<div class="card">
+    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Experience" %}</b></h5>
+
+    <div class="timeline">
         {% for job in object.jobs.all %}
-            <div class="row">
-            {% if forloop.counter|divisibleby:"2" %}
-                <div class="col s5">
-                    <div class="right-align">{{ job.company }}</div>
-                    <div class="left-align">{{ job.description}}</div>
+        <div class="timeline-event">
+            <div class="card timeline-content">
+                <div class="card-content">
+                    <span class="card-title">{{ job.start|date:"Y" }} - {{ job.company }}</span>
+                    <p>{{ job.description}}</p>
                 </div>
-                <div class="col s2 center-align">{{ job.start|date:"Y" }}</div>
-                <div class="col s5">&nbsp;</div>
-            {% else %}
-                <div class="col s5">&nbsp;</div>
-                <div class="col s2 center-align">{{ job.start|date:"Y" }}</div>
-                <div class="col s5">
-                    <div class="left-align">{{ job.company }}</div>
-                    <div class="right-align">{{ job.description}}</div>
-                </div>
-            {% endif %}
             </div>
+            <div class="timeline-badge blue white-text">
+                <i class="material-icons">my_location</i>
+            </div>
+        </div>
         {% endfor %}
     </div>
+</div>
 {% endif %}
 {% endblock %}
