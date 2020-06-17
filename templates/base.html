@@ -38,6 +38,13 @@
     <main>
         {% block base_content %}{% endblock %}
     </main>
+    <footer class="page-footer" style="background-color:black;">
+        <div class="center-align">
+            <a href="https://www.alten.com/">
+            <img class="responsive-img" style="max-width:300px" src="{% static "base/logo/alten.png" %}">
+            </a>
+        </div>
+    </footer>
     <!--JavaScript at end of body for optimized loading-->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -50,12 +57,4 @@
     </script>
     {% block bodyend %}{% endblock %}
 </body>
-<footer class="page-footer" style="background-color:black;">
-    <div class="center-align">
-        <a href="https://www.alten.com/">
-        <img class="responsive-img" style="max-width:300px" src="{% static "base/logo/Alten Logo New.png" %}">
-        </a>
-    </div>
-
-</footer>
 </html>

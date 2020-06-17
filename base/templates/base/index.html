@@ -4,7 +4,9 @@
 
 {% block base_content %}
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "base/gfx/parallax1.jpg" %}"></div>
+    <div class="parallax">
+        <img alt="{% trans 'Copenhagen seen from above' %}" src="{% static "base/gfx/parallax1.jpg" %}">
+    </div>
 </div>
 <div class="section white">
     <div class="row container">
@@ -19,18 +21,24 @@
 </div>
 {% if object %}
     <div class="parallax-container">
-        <div class="parallax"><img src="{% static "base/gfx/parallax3.jpg" %}"></div>
+        <div class="parallax">
+            <img alt="Lille Langebro" src="{% static "base/gfx/parallax3.jpg" %}">
+        </div>
     </div>
     <div class="section white">
         <div class="row container">
-            <h2 class="header"> <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
-            {{ object.get_full_name }}</h2>
+            <h2 class="header">
+                <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+                {{ object.get_full_name }}
+            </h2>
             <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
         </div>
     </div>
 {% endif %}
 <div class="parallax-container">
-    <div class="parallax"><img src="{% static "base/gfx/parallax4.jpg" %}"></div>
+    <div class="parallax">
+        <img alt="{% trans 'Copenhagen by night' %}" src="{% static "base/gfx/parallax4.jpg" %}">
+    </div>
 </div>
 {% endblock %}
 
