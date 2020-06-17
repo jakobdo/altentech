@@ -25,7 +25,11 @@
         <div class="card">
             <div class="card-content center-align">
                 <div>
-                    <img class="circle responsive-img" src="{{ MEDIA_URL }}{{ employee.image.medium }}">
+                    <img 
+                        class="circle responsive-img" 
+                        src="{{ MEDIA_URL }}{{ employee.image.medium }}"
+                        alt="{{ employee.get_full_name }}"
+                    >
                 </div>
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>

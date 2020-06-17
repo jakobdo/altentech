@@ -12,8 +12,11 @@
     <div style="padding-top: 170px">
         <div class="card right-left-padding" style="text-align: center; margin-bottom: 0px;">
             <div style="position:relative; top: -150px; padding-top">
-                <img src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}"
-                    class="circle responsive-img z-depth-3">
+                <img 
+                    src="{{ MEDIA_URL }}{{ object.image.medium }}" 
+                    alt="{{ object.get_full_name }}"
+                    class="circle responsive-img z-depth-3"
+                >
             </div>
             <div style="position:relative; top:-100px; align-content:center;">
                 <h5 class="center-align" style="color: #043962;"><b>{{ object.get_full_name }}</b></h5>
