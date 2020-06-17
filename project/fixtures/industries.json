@@ -1,0 +1,20 @@
+[
+    {
+        "model": "client.industry",
+        "pk": 1,
+        "fields": {
+            "name": "Naval",
+            "slug": "naval",
+            "description": "Naval industry like..."
+        }
+    },
+    {
+        "model": "client.industry",
+        "pk": 2,
+        "fields": {
+            "name": "Wind Power",
+            "slug": "wind-power",
+            "description": "Wind Power industry like Power in the Wind!"
+        }
+    }
+]

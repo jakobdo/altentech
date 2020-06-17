@@ -27,3 +27,16 @@ class Client(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Industry(models.Model):
+    name = models.CharField(max_length=100)
+    slug = models.SlugField(unique=True)
+    description = models.TextField()
+
+    class Meta:
+        ordering = ['name']
+        verbose_name_plural = "industries"
+
+    def __str__(self):
+        return self.name

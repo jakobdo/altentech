@@ -1,6 +1,6 @@
 from django.db import models
 
-from client.models import Client
+from client.models import Client, Industry
 from employee.models import Employee
 from technology.models import Technology
 
@@ -12,7 +12,16 @@ class Project(models.Model):
     client = models.ForeignKey(
         Client,
         related_name="projects",
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
+    )
+    industry = models.ForeignKey(
+        Industry,
+        related_name="projects",
+        on_delete=models.CASCADE,
+        blank=True,
+        null=True
     )
     technologies = models.ManyToManyField(Technology)
     consultants = models.ManyToManyField(Employee)

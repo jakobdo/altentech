@@ -22,5 +22,6 @@ python manage.py loaddata clients
 python manage.py loaddata technologies
 python manage.py loaddata employees
 python manage.py loaddata technologylevel
+python manage.py loaddata industries
 python manage.py loaddata projects
 

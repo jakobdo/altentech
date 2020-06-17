@@ -4,7 +4,14 @@
 
 {% block content %}
 <h3>{{ object.name }}</h3>
-<p>{% trans "Client" %}: <a href="{% url 'clients-detail' object.client.slug %}">{{ object.client.name }}</a></p>
+
+{% url 'clients-detail' object.client.slug as client_url %}
+{% if client_url %}
+    <p>{% trans "Client" %}: <a href="{{client_url}}">{{ object.client.name }}</a></p>
+{% endif %}
+{% if object.industry %}
+    <p>{% trans "Industry" %}: {{ object.industry.name }}</p>
+{% endif %}
 <p>{% trans "Description" %}: {{ object.description }}</p>
 
 {% if object.consultants.all %}
