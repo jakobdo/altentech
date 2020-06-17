@@ -3,9 +3,12 @@
 {% load i18n %}
 
 {% block content %}
-<p>{{ object.name }}</p>
-<p>{% trans "Description" %}: {{ object.description }}</p>
+<h1>{{ object.name }}</h1>
 
+<div class="card" style="padding:10%"> 
+<p><b>{% trans "Description" %}:</b> {{ object.description }}</p>
+
+<br>
 {% if object.project_set.all %}
 <p>{% trans "Projects" %}: </p>
 <ul>
@@ -21,6 +24,8 @@
 </ul>
 {% endif %}
 
+<br>
+
 {% if object.employee_set.all %}
 <p>{% trans "Consultants" %}: </p>
 <ul>
@@ -30,3 +35,4 @@
 </ul>
 {% endif %}
 {% endblock %}
+</div>

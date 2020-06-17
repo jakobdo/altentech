@@ -17,8 +17,9 @@
 </div>
 <div class="section white">
     <div class="row container">
-        <h2 class="header">{{ object.get_full_name }}</h2>
-        <p class="grey-text text-darken-3 lighten-3">{{ object.description }}</p>
+        <h2 class="header"> <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+         {{ object.get_full_name }}</h2>
+        <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
     </div>
 </div>
 <div class="parallax-container">

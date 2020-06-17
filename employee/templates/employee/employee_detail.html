@@ -7,26 +7,37 @@
 {% endblock %}
 
 {% block content %}
+
 <div class="row">
-    <div style="padding-top: 20%">
-        <div class="card" style="text-align: center;">
-            <div style="position:relative; top: -150px;">
+    <div style="padding-top: 170px">
+        <div class="card right-left-padding" style="text-align: center; margin-bottom: 0px;">
+            <div style="position:relative; top: -150px; padding-top">
                 <img src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}"
                     class="circle responsive-img z-depth-3">
             </div>
-            <div style="position:relative; top:-100px;align-content:center;">
+            <div style="position:relative; top:-100px; align-content:center;">
                 <h5 class="center-align" style="color: #043962;"><b>{{ object.get_full_name }}</b></h5>
                 <p class="center-align" style="position:relative; top: -10px; color: #008BD2;">{{ object.jobtitle }}</p>
-                <p class="left-align" style="padding-left: 15%; padding-right: 15%;">
+                <hr style="margin-left:10%;margin-right:10%">
+                <div class="center-align" style="padding-left:15%; padding-right:15%;">
+                     <p class="left-align">
                     {{ object.description|linebreaksbr }}</p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-{% if object.technologylevel_set.all %}
-<div class="card center-align">
-    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
+<div class="center-align">
+    <i class="medium material-icons md-36 alten-background-light-blue" style="padding:15px;">settings</i>
+</div>
+
+
+<div class="card" style="text-align: center;">
+    {% if object.technologylevel_set.all %}
+    <div>
+        <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
+    </div>
     <div class="center-align">
         <div style="width: 300px; margin: auto;">
             <table class="table">
@@ -57,9 +68,13 @@
     {% endif %}
 </div>
 
+<div class="center-align">
+    <i class="medium material-icons md-36 alten-background-light-blue" style="padding:20px;">group_work</i>
+</div>
+
 {% if object.project_set.all %}
-<div class="card center-align">
-    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Projects" %}</b></h5>
+<div class="card center-align" style="padding-bottom:20px;margin-bottom:10px; margin-top:10px;">
+    <h5 style="text-align: center; color: #043962;padding-top: 35px; margin-top:0px;"><b>{% trans "Projects" %}</b></h5>
     <ul>
         {% for project in object.project_set.all %}
         <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
@@ -74,16 +89,22 @@
 </div>
 {% endif %}
 
+<div class="center-align">
+    <i class="medium material-icons md-36 alten-background-light-blue" style="padding:20px">work</i>
+</div>
+
 {% if object.jobs.all %}
-<div class="card">
-    <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Experience" %}</b></h5>
+<div class="card right-left-padding">
+    <h5 style="text-align: center; color: #043962;padding-top: 35px; margin-top: 0px"><b>{% trans "Experience" %}</b></h5>
 
     <div class="timeline">
         {% for job in object.jobs.all %}
         <div class="timeline-event">
-            <div class="card timeline-content">
+            <div class="card timeline-content alten-light-blue">
                 <div class="card-content">
-                    <span class="card-title">{{ job.start|date:"Y" }} - {{ job.company }}</span>
+                    <span class="card-title alten-header-color">{{ job.start|date:"Y" }} - {{ job.company }}</span>
+                    <p class="alten-p-light-blue"><b>{{job.job_title}}</b></p>
+                    <hr>
                     <p>{{ job.description}}</p>
                 </div>
             </div>
