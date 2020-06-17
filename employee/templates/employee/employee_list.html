@@ -8,11 +8,11 @@
 {% if tags %}
 <div>
     <a href="{% url 'employees-list' %}">
-        <div class="chip">{% trans "All" %}</div>
+        <div class="chip chip-light-blue">{% trans "All" %}</div>
     </a>
     {% for tag in tags %}
     <a href="?tag={{tag.slug}}">
-        <div class="chip">{{ tag.name }}</div>
+        <div class="chip chip-light-blue">{{ tag.name }}</div>
     </a>
     {% endfor %}
 </div>
@@ -27,12 +27,13 @@
                 <div>
                     <img class="circle responsive-img" src="{{ MEDIA_URL }}{{ employee.image.medium }}">
                 </div>
-                
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>
             </div>
             <div class="card-action">
-                <a href="{% url 'employees-detail' slug=employee.slug %}">{% trans "More details" %}</a>
+                <div z-depth-2>
+                    <a class="waves-effect waves-light btn;" href="{% url 'employees-detail' slug=employee.slug %}">Learn more</a>
+                </div>
             </div>
         </div>
     </div>

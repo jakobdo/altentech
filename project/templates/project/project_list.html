@@ -5,11 +5,36 @@
 
 {% block content %}
 <h1>{% trans "Projects" %}</h1>
-<div class="collection">
+<div class="row">
     {% for project in object_list %}
-        <a href="{% url 'projects-detail' project.slug %}" class="collection-item">{{ project }}</a>
+    <div class="col s12 m6 l4">
+        <div class="card card-content center-align" style="padding:10%">
+            <h6 href="{% url 'projects-detail' project.slug %}">{{ project }}</h6>
+            <p style="color: #008BD2;">{{project.client}}</p>
+            <br>
+            <div class="left-align">
+                <a style="color:black; font-size:small;">{{project.description}}</a>
+            </div>
+            <br>
+            <div class="left-align">
+                 <a style="color:#FFBA00; font-size:small"><b>Consultants:</b></a>
+            </div>
+            {% for employee in project.consultants.all %}
+                <div>
+                  <a href="{% url 'employees-detail' slug=employee.slug %}">{{employee.get_full_name}} </a>
+                </div>
+            {% endfor%}
+            <div style="padding-top:15px">
+            {% for technology in project.technologies.all %}
+                 <div class="chip chip-light-blue">{{ technology }}</div>
+            {% endfor %}
+        </div>
+        </div>
+        
+    </div>
     {% empty %}
-        <div class="collection-item">{% trans "No projects yet." %}</div>
+        <div class="col s12">{% trans "No projects yet." %}</div>
     {% endfor %}
+    
 </div>
 {% endblock %}
