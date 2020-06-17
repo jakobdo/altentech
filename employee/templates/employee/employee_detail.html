@@ -38,15 +38,19 @@
                     </th>
                     <td>
                         {% for x in ""|ljust:technology_level.level %}
-                        <i class="material-icons">star</i>
+                            <i class="material-icons">star</i>
                         {% endfor %}
+
                         {% if technology_level.level == 3 %}
-                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
                         {% endif %}
 
                         {% if technology_level.level == 1 %}
-                        <i class="material-icons">star_border</i><i class="material-icons">star_border</i><i
-                            class="material-icons">star_border</i><i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
                         {% endif %}
                     </td>
                 </tr>

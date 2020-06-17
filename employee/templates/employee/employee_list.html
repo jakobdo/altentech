@@ -30,7 +30,9 @@
                 
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>
-                <a href="{% url 'employees-detail' slug=employee.slug %}">Link</a>
+            </div>
+            <div class="card-action">
+                <a href="{% url 'employees-detail' slug=employee.slug %}">{% trans "More details" %}</a>
             </div>
         </div>
     </div>
