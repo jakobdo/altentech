@@ -8,4 +8,8 @@ class IndexView(DetailView):
     template_name = 'base/index.html'
 
     def get_object(self, queryset=None):
-        return self.model.objects.order_by("?")[0]
+        try:
+            obj = self.model.objects.order_by("?")[0]
+        except IndexError:
+            obj = None
+        return obj

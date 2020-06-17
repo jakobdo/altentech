@@ -12,16 +12,18 @@
         <p class="grey-text text-darken-3 lighten-3">{% trans "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." %}</p>
     </div>
 </div>
-<div class="parallax-container">
-    <div class="parallax"><img src="{% static "base/gfx/parallax3.jpg" %}"></div>
-</div>
-<div class="section white">
-    <div class="row container">
-        <h2 class="header"> <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
-         {{ object.get_full_name }}</h2>
-        <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
+{% if object %}
+    <div class="parallax-container">
+        <div class="parallax"><img src="{% static "base/gfx/parallax3.jpg" %}"></div>
     </div>
-</div>
+    <div class="section white">
+        <div class="row container">
+            <h2 class="header"> <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+            {{ object.get_full_name }}</h2>
+            <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
+        </div>
+    </div>
+{% endif %}
 <div class="parallax-container">
     <div class="parallax"><img src="{% static "base/gfx/parallax4.jpg" %}"></div>
 </div>
