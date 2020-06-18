@@ -27,6 +27,20 @@
                     {{ object.description|linebreaksbr }}</p>
                 </div>
             </div>
+            {% if object.cv or object.linkedin %}
+                <div class="right-align">
+                    {% if object.cv %}
+                        <a href="{{ object.cv }}">
+                            <i class="material-icons">picture_as_pdf</i>
+                        </a>
+                    {% endif %}
+                    {% if object.linkedin %}
+                        <a target="_blank" href="{{ object.linkedin }}">
+                            <i class="material-icons">link</i>
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
