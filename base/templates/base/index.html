@@ -4,41 +4,35 @@
 
 {% block base_content %}
 <div class="parallax-container">
-    <div class="parallax">
-        <img alt="{% trans 'Copenhagen seen from above' %}" src="{% static "base/gfx/parallax1.jpg" %}">
-    </div>
+    <div class="parallax"><img src="{% static "base/gfx/parallax1.jpg" %}"></div>
 </div>
 <div class="section white">
     <div class="row container">
         <h2 class="header">{% trans "Alten Denmark" %}</h2>
-        <p class="grey-text text-darken-3 lighten-3">{% blocktrans trimmed %}
-        ALTEN Group supports the development strategy of its customers in the fields of innovation, R&D and technological information systems. 
-        Created 30 years ago in France, the Group has become a world leader in Engineering and Technology consulting. 
-        34.000 highly qualified engineers carry out studies and conception projects for the Technical and Information Systems Divisions of major customers in the industrial and service sectors.
-        ALTEN DANMARK A/S works within Energy, Life Science, Banking, Insurance and Robot Industries.
-        {% endblocktrans %}</p>
+        <p class="grey-text text-darken-3 lighten-3">{% trans "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." %}</p>
     </div>
 </div>
-{% if object %}
-    <div class="parallax-container">
-        <div class="parallax">
-            <img alt="Lille Langebro" src="{% static "base/gfx/parallax3.jpg" %}">
-        </div>
-    </div>
-    <div class="section white">
-        <div class="row container">
-            <h2 class="header">
-                <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
-                {{ object.get_full_name }}
-            </h2>
-            <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
-        </div>
-    </div>
-{% endif %}
 <div class="parallax-container">
-    <div class="parallax">
-        <img alt="{% trans 'Copenhagen by night' %}" src="{% static "base/gfx/parallax4.jpg" %}">
+    <div class="parallax"><img src="{% static "base/gfx/parallax2.jpg" %}"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h2 class="header"> <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+        <a href="{% url 'employees-detail' slug=object.slug %}"> {{ object.get_full_name }}</a></h2>
+        <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
     </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static "base/gfx/parallax3.jpg" %}"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h2 class="header">Clients says</h2>
+        <p class="grey-text text-darken-3 lighten-3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{% static "base/gfx/parallax4.jpg" %}"></div>
 </div>
 {% endblock %}
 

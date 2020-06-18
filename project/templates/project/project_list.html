@@ -24,7 +24,7 @@
                   <a href="{% url 'employees-detail' slug=employee.slug %}">{{employee.get_full_name}} </a>
                 </div>
             {% endfor%}
-            <div style="padding-top:15px">
+            <div class="left-align" style="padding-top:15px">
             {% for technology in project.technologies.all %}
                  <div class="chip chip-light-blue">{{ technology }}</div>
             {% endfor %}
