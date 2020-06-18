@@ -76,7 +76,7 @@
         <h5 style="text-align: center; color: #043962;padding-top: 35px; margin-top:0px;"><b>{% trans "Projects" %}</b></h5>
         <ul>
             {% for project in object.project_set.all %}
-            <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+            <li><a href="{% url 'projects-detail' project.slug %}"><b>{{ project.name }} - </b></a>
                 {% if project.technologies.all %}
                 {% for tech in project.technologies.all %}
                 <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>

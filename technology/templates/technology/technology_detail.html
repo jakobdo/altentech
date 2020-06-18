@@ -10,10 +10,10 @@
 
 <br>
 {% if object.project_set.all %}
-<p>{% trans "Projects" %}: </p>
+<p><b>{% trans "Projects" %}: </b> </p>
 <ul>
     {% for project in object.project_set.all %}
-    <li><a href="{% url 'projects-detail' project.slug %}">{{ project.name }}</a>
+    <li style="padding-left:5%"><a href="{% url 'projects-detail' project.slug %}"><b>{{ project.name }} - </b></a>
         {% if project.technologies.all %}
             {% for tech in project.technologies.all %}
                 <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></span>
@@ -27,10 +27,10 @@
 <br>
 
 {% if object.employee_set.all %}
-<p>{% trans "Consultants" %}: </p>
+<p><b>{% trans "Consultants" %}: </b></p>
 <ul>
     {% for consultant in object.employee_set.all %}
-        <li><a href="{% url 'employees-detail' consultant.slug %}">{{ consultant.get_full_name }}</a></li>
+        <li style="padding-left:5%"><a href="{% url 'employees-detail' consultant.slug %}" >{{ consultant.get_full_name }}</a></li>
     {% endfor %}
 </ul>
 {% endif %}

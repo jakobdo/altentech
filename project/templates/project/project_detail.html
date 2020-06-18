@@ -4,31 +4,33 @@
 
 {% block content %}
 <h3>{{ object.name }}</h3>
+<div class="card" style="padding:5%">
 
-{% url 'clients-detail' object.client.slug as client_url %}
-{% if client_url %}
-    <p>{% trans "Client" %}: <a href="{{client_url}}">{{ object.client.name }}</a></p>
-{% endif %}
-{% if object.industry %}
-    <p>{% trans "Industry" %}: {{ object.industry.name }}</p>
-{% endif %}
-<p>{% trans "Description" %}: {{ object.description }}</p>
+    {% url 'clients-detail' object.client.slug as client_url %}
+    {% if client_url %}
+        <p><b>{% trans "Client" %}: </b><a href="{{client_url}}">{{ object.client.name }}</a></p>
+    {% endif %}
+    {% if object.industry %}
+        <p><b>{% trans "Industry" %}: </b>{{ object.industry.name }}</p>
+    {% endif %}
+    <p><b>{% trans "Description" %}: </b>{{ object.description }}</p>
 
-{% if object.consultants.all %}
-    <p>{% trans "Consultants" %}: </p>
-    <ul>
-    {% for consultant in object.consultants.all %}
-        <li><a href="{% url 'employees-detail' consultant.slug %}">{{ consultant.get_full_name }}</a></li>
-    {% endfor %}
-    </ul>
-{% endif %}
+    {% if object.consultants.all %}
+        <p><b>{% trans "Consultants" %}: </b></p>
+        <ul>
+        {% for consultant in object.consultants.all %}
+            <li><a href="{% url 'employees-detail' consultant.slug %}" style="padding-left:5%">{{ consultant.get_full_name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
 
-{% if object.technologies.all %}
-    <p>{% trans "Technologies" %}: </p>
-    <ul>
-    {% for tech in object.technologies.all %}
-        <li><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></li>
-    {% endfor %}
-    </ul>
-{% endif %}
+    {% if object.technologies.all %}
+        <p><b>{% trans "Technologies" %}: </b></p>
+        <ul>
+        {% for tech in object.technologies.all %}
+            <li><a href="{% url 'technologies-detail' tech.slug %}" style="padding-left:5%">{{ tech.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
 {% endblock %}
