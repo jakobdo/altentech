@@ -27,6 +27,20 @@
                     {{ object.description|linebreaksbr }}</p>
                 </div>
             </div>
+            {% if object.cv or object.linkedin %}
+                <div class="right-align">
+                    {% if object.cv %}
+                        <a href="{{ object.cv }}">
+                            <i class="material-icons">picture_as_pdf</i>
+                        </a>
+                    {% endif %}
+                    {% if object.linkedin %}
+                        <a target="_blank" href="{{ object.linkedin }}">
+                            <i class="material-icons">link</i>
+                        </a>
+                    {% endif %}
+                </div>
+            {% endif %}
         </div>
     </div>
 </div>
@@ -36,25 +50,19 @@
         <i class="medium material-icons md-36 alten-background-light-blue" style="padding:15px;">star</i>
     </div>
 
-    <div class="card" style="text-align: center;">
-        <div>
-            <h5 style="text-align: center; color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
-        </div>
+    <div class="card">
         <div class="center-align">
-            <div style="width: 300px; margin: auto;">
-                <table class="table">
-                    {% for technology_level in object.technologylevel_set.all %}
-                    <tr>
-                        <th>
-                            <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
-                        </th>
-                        <td>
-                            {{ technology_level.level|stars }}
-                        </td>
-                    </tr>
-                    {% endfor %}
-                </table>
-            </div>
+            <h5 style="color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
+        </div>
+        <div class="row">
+            {% for technology_level in object.technologylevel_set.all %}
+                <div class="col s6 right-align">
+                    <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                </div>
+                <div class="col s6">
+                    {{ technology_level.level|stars }}
+                </div>
+            {% endfor %}
         </div>
     </div>
 {% endif %}
