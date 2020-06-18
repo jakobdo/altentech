@@ -1,4 +1,4 @@
-from django.views.generic import DetailView
+from django.views.generic import DetailView, TemplateView
 
 from employee.models import Employee
 
@@ -13,3 +13,7 @@ class IndexView(DetailView):
         except IndexError:
             obj = None
         return obj
+
+
+class ContactView(TemplateView):
+    template_name = 'base/contact.html'

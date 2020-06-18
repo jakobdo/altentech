@@ -1,3 +1,4 @@
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext
 from stdimage import JPEGField
@@ -13,8 +14,13 @@ class Employee(models.Model):
     jobtitle = models.CharField(max_length=100)
     description = models.TextField()
     linkedin = models.URLField(blank=True, null=True)
+    cv = models.FileField(
+        upload_to='cv/',
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])],
+        null=True
+    )
     image = JPEGField(
-        upload_to='employee',
+        upload_to='employee/',
         variations={
             'full': {
                 "width": None,

@@ -17,7 +17,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from base.views import IndexView
+
+from base.views import ContactView, IndexView
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
@@ -25,6 +26,7 @@ urlpatterns = [
     path('projects/', include('project.urls')),
     path('clients/', include('client.urls')),
     path('technologies/', include('technology.urls')),
+    path('contact', ContactView.as_view(), name="contact-us"),
     path('admin/', admin.site.urls),
 ] + static(
     settings.MEDIA_URL,
