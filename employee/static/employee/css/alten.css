@@ -98,4 +98,7 @@ body {
 main {
     flex: 1 0 auto;
 }
-      
+
+.card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
+    color:white;
+}
