@@ -10,8 +10,9 @@
     <div class="col s12 m6 l4">
         <div class="card card-content center-align" style="padding:10%">
             <h6 href="{% url 'projects-detail' project.slug %}">{{ project }}</h6>
-            <p style="color: #008BD2;">{{project.client}}</p>
-            <br>
+            {% if project.get_client_or_industry %}
+                <p style="color: #008BD2;">{{project.get_client_or_industry}}</p><br>
+            {% endif %}
             <div class="left-align">
                 <a style="color:black; font-size:small;">{{project.description}}</a>
             </div>

@@ -6,8 +6,18 @@
 <link rel="stylesheet" href="{% static "base/css/timeline.css" %}">
 {% endblock %}
 
-{% block content %}
+{% block metatags %}
+    <meta property="og:title" content="Alten Denmark ApS - {{object.get_full_name}}">
+    <meta property="twitter:title" content="Alten Denmark ApS - {{object.get_full_name}}">
 
+    <meta property="og:description" content="{{ object.description }}">
+    <meta property="twitter:description" content="{{ object.description }}">
+
+    <meta property="og:image" content="https://altentechnology.dk{{ MEDIA_URL }}{{ object.image.medium }}">
+    <meta property="twitter:image" content="https://altentechnology.dk{{ MEDIA_URL }}{{ object.image.medium }}">
+{% endblock %}
+
+{% block content %}
 <div class="row">
     <div style="padding-top: 170px">
         <div class="card right-left-padding" style="text-align: center; margin-bottom: 0px;">

@@ -28,3 +28,11 @@ class Project(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_client_or_industry(self):
+        if self.client:
+            return self.client.name
+        elif self.industry:
+            return self.industry.name
+        else:
+            return None

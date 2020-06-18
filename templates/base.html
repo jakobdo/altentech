@@ -4,9 +4,7 @@
 <html lang="en">
 <head>
     <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="{% static "employee/css/alten.css" %}">
@@ -15,8 +13,29 @@
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="{% trans 'Find your next consultant from Alten Denmark ApS on this page' %}">
+    <meta name="title" content="Alten Denmark - {% trans "Technology" %}">
 
     <title>Alten Denmark - {% trans "Technology" %}</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:site_name" content="Alten Denmark ApS - Technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://altentechnology.dk">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="website">
+    <meta property="twitter:url" content="https://altentechnology.dk">
+    
+    {% block metatags %}
+        <meta property="og:title" content="Alten Denmark ApS - Technology">
+        <meta property="twitter:title" content="Alten Denmark ApS - Technology">
+        
+        <meta property="og:description" content="{% trans 'Find your next consultant from Alten Denmark ApS on this page' %}">
+        <meta property="twitter:description" content="{% trans 'Find your next consultant from Alten Denmark ApS on this page' %}">
+
+        <meta property="og:image" content="https://altentechnology.dk{% static 'base/logo/alten.png' %}">
+        <meta property="twitter:image" content="https://altentechnology.dk{% static 'base/logo/alten.png' %}">
+    {% endblock %}
 </head>
 
 <body>
