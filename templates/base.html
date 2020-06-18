@@ -45,18 +45,16 @@
                 <a href="{% url 'index' %}" class="brand-logo">ALTEN Denmark</a>
                 <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{% url 'employees-list' %}">{% trans "CONSULTANTS" %}</a></li>
-                    <li><a href="{% url 'projects-list' %}">{% trans "PROJECTS" %}</a></li>
-                    <li><a href="{% url 'technologies-list' %}">{% trans "TECHNOLOGIES" %}</a></li>
-                    <li><a href="{% url 'contact-us' %}">{% trans "CONTACT US" %}</a></li>
+                    {% for link in links %}
+                        <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text|upper }}</a></li>    
+                    {% endfor %}
                 </ul>
             </div>
         </nav>
         <ul class="sidenav" id="mobile-navbar">
-            <li><a href="{% url 'employees-list' %}">{% trans "Consultants" %}</a></li>
-            <li><a href="{% url 'projects-list' %}">{% trans "Projects" %}</a></li>
-            <li><a href="{% url 'technologies-list' %}">{% trans "Technologies" %}</a></li>
-            <li><a href="{% url 'contact-us' %}">{% trans "Contact Us" %}</a></li>
+            {% for link in links %}
+                <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>    
+            {% endfor %}
         </ul>
     </header>
     <main>
