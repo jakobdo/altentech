@@ -1,6 +1,6 @@
 {% extends "master.html" %}
 
-{% load i18n static %}
+{% load i18n star_level static %}
 
 {% block head %}
 <link rel="stylesheet" href="{% static "base/css/timeline.css" %}">
@@ -47,25 +47,10 @@
                 {% for technology_level in object.technologylevel_set.all %}
                 <tr>
                     <th>
-                        <a
-                            href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                        <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
                     </th>
                     <td>
-                        {% for x in ""|ljust:technology_level.level %}
-                            <i class="material-icons">star</i>
-                        {% endfor %}
-
-                        {% if technology_level.level == 3 %}
-                            <i class="material-icons">star_border</i>
-                            <i class="material-icons">star_border</i>
-                        {% endif %}
-
-                        {% if technology_level.level == 1 %}
-                            <i class="material-icons">star_border</i>
-                            <i class="material-icons">star_border</i>
-                            <i class="material-icons">star_border</i>
-                            <i class="material-icons">star_border</i>
-                        {% endif %}
+                        {{ technology_level.level|stars }}
                     </td>
                 </tr>
                 {% endfor %}
