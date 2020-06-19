@@ -15,7 +15,7 @@ def links(request):
             active=False
         ),
         dict(
-            text=gettext_lazy("Technologies"),
+            text=gettext_lazy("Technologies & Tools"),
             url=reverse('technologies-list'),
             active=False
         ),
