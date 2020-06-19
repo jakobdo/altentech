@@ -41,12 +41,12 @@
                 <div class="right-align">
                     {% if object.cv %}
                         <a href="{{ object.cv }}">
-                            <i class="material-icons">picture_as_pdf</i>
+                            <img src="{% static 'base/logo/pdf.png' %}" alt="{% trans "CV in PDF Format">
                         </a>
                     {% endif %}
                     {% if object.linkedin %}
                         <a target="_blank" href="{{ object.linkedin }}">
-                            <i class="material-icons">link</i>
+                            <img src="{% static 'base/logo/linkedin.png' %}" height="32" alt="{% trans "Open consultants LinkedIn profile">
                         </a>
                     {% endif %}
                 </div>
