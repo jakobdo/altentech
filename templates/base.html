@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons&display=swap" rel="stylesheet">
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="{% static "employee/css/alten.css" %}">
+    <link rel="stylesheet" href="{% static "base/css/alten.css" %}">
     {% block head %}{% endblock %}
 
     <!--Let browser know website is optimized for mobile-->
@@ -17,10 +17,10 @@
 
     <title>Alten Denmark - {% trans "Technology" %}</title>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static "base/favicon/apple-touch-icon.png" %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static "base/favicon/favicon-32x32.png" %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static "base/favicon/favicon-16x16.png" %}">
+    <link rel="manifest" href="{% static "base/favicon/site.webmanifest" %}">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:site_name" content="Alten Denmark ApS - Technology">
