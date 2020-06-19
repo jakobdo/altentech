@@ -65,11 +65,29 @@
     <main>
         {% block base_content %}{% endblock %}
     </main>
-    <footer class="page-footer" style="background-color:black;">
-        <div class="center-align">
-            <a href="https://www.alten.com/">
-            <img class="responsive-img" alt="Alten Logo" style="max-width:300px" src="{% static "base/logo/alten.png" %}">
-            </a>
+    <footer class="page-footer black">
+        <div class="container">
+            <div class="row">
+                <div class="col l4 s12">
+                    <h5 class="white-text">Alten Denmark ApS</h5>
+                    <address>
+                        C/o Work Share Grow<br>
+                        Christians Brygge 28, 1.<br>
+                        1559 København V
+                    </address>
+                    <a href="tel:004541423030">+45 41 42 30 30</a>
+                </div>
+                <div class="col l5 s12">
+                    <a href="https://www.alten.com/">
+                        <img class="responsive-img" alt="Alten Logo" style="max-width:300px" src="{% static "base/logo/alten.png" %}">
+                    </a>
+                </div>
+                <div class="col l3 s12">
+                    <h5 class="white-text">Links</h5>
+                    <a target="_blank" href="https://alten.com">WWW</a><br>
+                    <a target="_blank" href="https://dk.linkedin.com/company/alten-danmark">LinkedIn</a>
+                </div>
+            </div>
         </div>
     </footer>
     <!--JavaScript at end of body for optimized loading-->
