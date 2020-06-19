@@ -25,18 +25,20 @@
         <div class="card">
             <div class="card-content center-align">
                 <div>
-                    <img 
-                        class="circle responsive-img" 
-                        src="{{ MEDIA_URL }}{{ employee.image.medium }}"
-                        alt="{{ employee.get_full_name }}"
-                    >
+                    <a class="waves-effect" href="{% url 'employees-detail' slug=employee.slug %}">
+                        <img 
+                            class="circle responsive-img" 
+                            src="{{ MEDIA_URL }}{{ employee.image.medium }}"
+                            alt="{{ employee.get_full_name }}"
+                        >
+                    </a>
                 </div>
                 <strong>{{ employee.get_full_name }}</strong>
                 <p>{{ employee.jobtitle }}</p>
             </div>
             <div class="card-action">
                 <div z-depth-2>
-                    <a class="waves-effect waves-light btn;" href="{% url 'employees-detail' slug=employee.slug %}">Learn more</a>
+                    <a class="waves-effect waves-light btn" href="{% url 'employees-detail' slug=employee.slug %}">Learn more</a>
                 </div>
             </div>
         </div>
