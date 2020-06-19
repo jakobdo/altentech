@@ -27,7 +27,8 @@
                 <div>
                     <a class="waves-effect" href="{% url 'employees-detail' slug=employee.slug %}">
                         <img 
-                            class="circle responsive-img" 
+                            class="circle responsive-img"
+                            href="{% url 'employees-detail' slug=employee.slug %}"
                             src="{{ MEDIA_URL }}{{ employee.image.medium }}"
                             alt="{{ employee.get_full_name }}"
                         >

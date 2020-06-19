@@ -37,28 +37,32 @@
                     {{ object.description|linebreaksbr }}</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col s6 left-align">
+             <div class="row valign-wrapper">
+                <div class="col s6" style="padding:5%">
                     <a 
                         target="_blank" 
                         href="mailto:tech@alten.dk?subject=Book%20Consultant%20%2d%20{{ object.get_full_name|urlencode }}" 
                         class="waves-effect waves-light btn"><i class="material-icons left">schedule</i>Book Consultant</a>
                 </div>
                 {% if object.cv or object.linkedin %}
-                <div class="col s6 right-align">
+                <div class="col s6" style="padding:5%">
                     {% if object.cv %}
-                        <a href="{{ object.cv }}">
-                            <img src="{% static 'base/logo/pdf.png' %}" alt="{% trans "CV in PDF Format">
-                        </a>
-                    {% endif %}
-                    {% if object.linkedin %}
-                        <a target="_blank" href="{{ object.linkedin }}">
-                            <img src="{% static 'base/logo/linkedin.png' %}" height="32" alt="{% trans "Open consultants LinkedIn profile">
-                        </a>
+                        <a 
+                           target="_blank" 
+                           href="{{ object.cv }}"
+                           class="waves-effect waves-light btn"><i class="material-icons left">file_download</i>Download CV</a>
                     {% endif %}
                 </div>
-            {% endif %}
             </div>
+             <div class="center-align" style="padding-bottom:4%">
+                    {% if object.linkedin %}
+                        <a target="_blank" href="{{ object.linkedin }}">
+                            <img src="{% static 'base/logo/linkedin.png' %}" height="32" alt="{% trans "Open consultants LinkedIn profile"%}">
+                        </a>
+                    {% endif %}
+              </div>
+            {% endif %}
+          
         </div>
     </div>
 </div>
@@ -70,7 +74,7 @@
 
     <div class="card">
         <div class="center-align">
-            <h5 style="color: #043962;padding-top: 35px"><b>{% trans "Technologies" %} </b></h5>
+            <h5 style="color: #043962;padding-top: 35px"><b>{% trans "Technologies & Tools" %} </b></h5>
         </div>
         <div class="row">
             {% for technology_level in object.technologylevel_set.all %}
