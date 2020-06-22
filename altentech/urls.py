@@ -27,11 +27,16 @@ urlpatterns = [
     path('clients/', include('client.urls')),
     path('technologies/', include('technology.urls')),
     path('contact', ContactView.as_view(), name="contact-us"),
-    path('admin/', admin.site.urls),
-] + static(
-    settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT
-) + static(
-    settings.STATIC_URL,
-    document_root=settings.STATIC_ROOT
-)
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('alten_dk_admin/', admin.site.urls),
+]
+
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(
+        settings.MEDIA_URL,
+        document_root=settings.MEDIA_ROOT
+    ) + static(
+        settings.STATIC_URL,
+        document_root=settings.STATIC_ROOT
+    )

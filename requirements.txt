@@ -1,5 +1,6 @@
 django
 django-stdimage
+django-admin-honeypot
 
 ipython
 pylint
