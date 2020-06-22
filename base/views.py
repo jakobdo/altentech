@@ -16,4 +16,4 @@ class IndexView(DetailView):
 
 
 class ContactView(TemplateView):
-    template_name = 'base/contact.html'
+    template_name = 'base/about.html'

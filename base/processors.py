@@ -20,8 +20,8 @@ def links(request):
             active=False
         ),
         dict(
-            text=gettext_lazy("Contact Us"),
-            url=reverse('contact-us'),
+            text=gettext_lazy("About Us"),
+            url=reverse('about-us'),
             active=False
         )
     ]

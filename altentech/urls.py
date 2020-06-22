@@ -26,7 +26,7 @@ urlpatterns = [
     path('projects/', include('project.urls')),
     path('clients/', include('client.urls')),
     path('technologies/', include('technology.urls')),
-    path('contact', ContactView.as_view(), name="contact-us"),
+    path('about', ContactView.as_view(), name="about-us"),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('alten_dk_admin/', admin.site.urls),
 ]
