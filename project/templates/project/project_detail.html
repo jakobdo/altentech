@@ -4,31 +4,62 @@
 
 {% block content %}
 <h3>{{ object.name }}</h3>
+<div class="card" style="padding:10%"> 
+    {% url 'clients-detail' object.client.slug as client_url %}
+    {% if client_url %}
+        <p><b>{% trans "Client" %}: </b><a href="{{client_url}}">{{ object.client.name }}</a></p>
+    {% endif %}
+    {% if object.industry %}
+        <br>
+        <p><b>{% trans "Industry" %}: </b>{{ object.industry.name }}</p>
+    {% endif %}
+    <p>{% trans "Description" %}: {{ object.description }}</p>
 
-{% url 'clients-detail' object.client.slug as client_url %}
-{% if client_url %}
-    <p>{% trans "Client" %}: <a href="{{client_url}}">{{ object.client.name }}</a></p>
-{% endif %}
-{% if object.industry %}
-    <p>{% trans "Industry" %}: {{ object.industry.name }}</p>
-{% endif %}
-<p>{% trans "Description" %}: {{ object.description }}</p>
+    {% if object.technologies.all %}
+    <br>
+        <p><b>{% trans "Technologies" %}:</b> </p>
+        <ul>
+        {% for tech in object.technologies.all %}
+            <li><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+</div>
 
-{% if object.consultants.all %}
-    <p>{% trans "Consultants" %}: </p>
-    <ul>
+<div>
+    {% if object.consultants.all %}
+        <h4 class="center-align">{% trans "Consultants" %} </h4>
+</div>      
+<div class="row">
     {% for consultant in object.consultants.all %}
-        <li><a href="{% url 'employees-detail' consultant.slug %}">{{ consultant.get_full_name }}</a></li>
-    {% endfor %}
-    </ul>
-{% endif %}
+    <div class="col s12 m6 l4">
+        <div class="card">
+            <div class="card-content center-align">
+                <div>
 
-{% if object.technologies.all %}
-    <p>{% trans "Technologies" %}: </p>
-    <ul>
-    {% for tech in object.technologies.all %}
-        <li><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a></li>
+                    <a href="{% url 'employees-detail' consultant.slug %}">
+                        <img 
+                            class="circle responsive-img"
+                            href="{% url 'employees-detail' consultant.slug %}"
+                            src="{{ MEDIA_URL }}{{ consultant.image.medium }}"
+                            alt="{{ consultant.get_full_name }}"
+                        >
+                    </a>
+                </div>
+                 <strong>{{ consultant.get_full_name }}</strong>
+                <p>{{ consultant.jobtitle }}</p>
+            </div>
+             <div class="card-action">
+                <div z-depth-2>
+                    <a style="padding-top:0%;" class="waves-effect waves-light btn" href="{% url 'employees-detail' slug=consultant.slug %}">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
     {% endfor %}
-    </ul>
-{% endif %}
+ </div>     
+ {% endif %}
+
+
+
 {% endblock %}
