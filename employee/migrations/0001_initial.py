@@ -35,7 +35,7 @@ class Migration(migrations.Migration):
             name='TechnologyLevel',
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('level', models.SmallIntegerField(choices=[(None, '(Unknown)'), (1, 'Beginner'), (3, 'Intermediate'), (5, 'Advanced')])),
+                ('level', models.SmallIntegerField(choices=[(None, '(Unknown)'),(1, 'Fundamental'), (2, 'Beginner'), (3, 'Intermediate'), (4, 'Advanced'), (5, 'Expert')])),
                 ('employee', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='employee.Employee')),
                 ('technology', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='technology.Technology')),
             ],
