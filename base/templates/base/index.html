@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% load i18n static %}
+{% load i18n star_level static %}
 
 {% block base_content %}
 <div class="parallax-container">
@@ -29,12 +29,31 @@
         </div>
     </div>
     <div class="section white">
-        <div class="row container">
-            <h2 class="header">
-                <img src="{{ MEDIA_URL }}{{ object.image.thumbnail }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
-                <a href="{% url 'employees-detail' slug=object.slug %}"> {{ object.get_full_name }}</a>
-            </h2>
-            <p class="grey-text text-darken-3 lighten-3">{{ object.description|linebreaksbr }}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m3">
+                    <img src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+                </div>
+                <div class="col s12 m9">
+                    <h2 class="header">
+                        <a href="{% url 'employees-detail' slug=object.slug %}"> {{ object.get_full_name }}</a>
+                    </h2>
+                    <p class="grey-text text-darken-3 lighten-3">{{ object.jobtitle }}</p>
+
+                    {% if object.technologylevel_set.all %}
+                        <div class="row">
+                            {% for technology_level in object.technologylevel_set.all %}
+                                <div class="col s6 right-align">
+                                    <a href="{% url 'technologies-detail' technology_level.technology.slug %}">{{ technology_level.technology.name }}</a>
+                                </div>
+                                <div class="col s6">
+                                    {{ technology_level.level|stars }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
         </div>
     </div>
 {% endif %}
