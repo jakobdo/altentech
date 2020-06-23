@@ -11,31 +11,33 @@
         <div class="card card-content center-align" style="padding:10%">
             <h6 href="{% url 'projects-detail' project.slug %}">{{ project }}</h6>
             {% if project.get_client_or_industry %}
-                <p style="color: #008BD2;">{{project.get_client_or_industry}}</p><br>
+            <p style="color: #008BD2;">{{project.get_client_or_industry}}</p><br>
             {% endif %}
             <div class="left-align">
                 <a style="color:black; font-size:small;">{{project.description}}</a>
             </div>
             <br>
             <div class="left-align">
-                 <a style="color:#FFBA00; font-size:small"><b>Consultants:</b></a>
+                <a style="color:#FFBA00; font-size:small"><b>Consultants:</b></a>
             </div>
             {% for employee in project.consultants.all %}
-                <div>
-                  <a href="{% url 'employees-detail' slug=employee.slug %}">{{employee.get_full_name}} </a>
-                </div>
+            <div>
+                <a href="{% url 'employees-detail' slug=employee.slug %}">{{employee.get_full_name}} </a>
+            </div>
             {% endfor%}
             <div class="left-align" style="padding-top:15px">
-            {% for technology in project.technologies.all %}
-                 <div class="chip chip-light-blue">{{ technology }}</div>
-            {% endfor %}
+                {% for technology in project.technologies.all %}
+                <a href="{% url 'technologies-detail' technology.slug %}">
+                    <div class="chip chip-light-blue">{{ technology.name }}</div>
+                </a>
+                {% endfor %}
+            </div>
         </div>
-        </div>
-        
+
     </div>
     {% empty %}
-        <div class="col s12">{% trans "No projects yet." %}</div>
+    <div class="col s12">{% trans "No projects yet." %}</div>
     {% endfor %}
-    
+
 </div>
 {% endblock %}
