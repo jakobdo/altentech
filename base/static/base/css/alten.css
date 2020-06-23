@@ -102,3 +102,7 @@ main {
 .card .card-action a:not(.btn):not(.btn-large):not(.btn-small):not(.btn-large):not(.btn-floating) {
     color:white;
 }
+
+.btn:hover {
+    background-color: #ffba00a8
+}

@@ -29,17 +29,19 @@
         </div>
     </div>
     <div class="section white">
-        <div class="container">
+        <div class="container" style="padding-top:5%;padding-bottom:5%">
             <div class="row">
-                <div class="col s12 m3">
+                <div class="col s12 m4">
                     <img src="{{ MEDIA_URL }}{{ object.image.medium }}" alt="{{ object.get_full_name }}" class="circle responsive-img z-depth-3">
+                    <div z-depth-2>
                 </div>
-                <div class="col s12 m9">
-                    <h2 class="header">
+                </div>
+                <div class="col s12 m8">
+                    <h3 class="header center-align" style="margin-bottom:0%;">
                         <a href="{% url 'employees-detail' slug=object.slug %}"> {{ object.get_full_name }}</a>
-                    </h2>
-                    <p class="grey-text text-darken-3 lighten-3">{{ object.jobtitle }}</p>
-
+                    </h3>
+                    <H5 class="grey-text text-darken-3 lighten-3 center-align" style="margin-top:0%">{{ object.jobtitle }}</H5>
+                    <br>
                     {% if object.technologylevel_set.all %}
                         <div class="row">
                             {% for technology_level in object.technologylevel_set.all|slice:":5" %}
@@ -54,6 +56,9 @@
                     {% endif %}
                 </div>
             </div>
+             <div class="center-align">
+                    <a style="padding-top:0%;" class="waves-effect waves-light btn" href="{% url 'employees-detail' slug=object.slug %}">Learn more</a>
+             </div>
         </div>
     </div>
 {% endif %}
