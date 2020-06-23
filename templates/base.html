@@ -94,7 +94,8 @@
                     <div>
                         <h5 class="white-text">Pages</h5>
                         {% for link in links %}
-                            <ul{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text|upper }}</a></ul>    
+                            {% if link.active %} {% endif %}
+                        <a href="{{ link.url }}">{{ link.text|upper }}</a><br>   
                         {% endfor %}
                     </div>
                 </div>
