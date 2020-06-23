@@ -13,6 +13,7 @@ class Employee(models.Model):
     slug = models.SlugField(unique=True)
     jobtitle = models.CharField(max_length=100)
     description = models.TextField()
+    teaser = models.CharField(max_length=100, null=True)
     linkedin = models.URLField(blank=True, null=True)
     cv = models.FileField(
         upload_to='cv/',
