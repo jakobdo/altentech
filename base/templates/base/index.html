@@ -45,6 +45,7 @@
                     {% if object.teaser %}
                         <p class="grey-text text-darken-3 lighten-3">{{ object.teaser }}</p>
                     {% endif %}
+                    <hr>
                     {% if object.technologylevel_set.all %}
                         <div class="row">
                             {% for technology_level in object.technologylevel_set.all|slice:":5" %}

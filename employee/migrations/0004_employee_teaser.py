@@ -13,6 +13,6 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='employee',
             name='teaser',
-            field=models.CharField(max_length=100, null=True),
+            field=models.CharField(max_length=200, null=True),
         ),
     ]
