@@ -23,10 +23,16 @@ from base.views import ContactView, IndexView
 from client.viewsets import ClientViewSet
 from employee.viewsets import ConsultantViewSet
 from frontend.views import ReactIndexView
+from project.viewsets import ProjectViewSet
+from tag.viewsets import TagViewSet
+from technology.viewsets import TechnologyViewSet
 
 router = routers.DefaultRouter()
 router.register(r'clients', ClientViewSet)
 router.register(r'consultants', ConsultantViewSet)
+router.register(r'projects', ProjectViewSet)
+router.register(r'tags', TagViewSet)
+router.register(r'technologies', TechnologyViewSet)
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
