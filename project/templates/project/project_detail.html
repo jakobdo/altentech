@@ -13,7 +13,7 @@
         <br>
         <p><b>{% trans "Industry" %}: </b>{{ object.industry.name }}</p>
     {% endif %}
-    <p>{% trans "Description" %}: {{ object.description }}</p>
+    <p><b>{% trans "Description" %}:</b> {{ object.description }}</p>
 
     {% if object.technologies.all %}
     <br>
