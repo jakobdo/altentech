@@ -19,5 +19,7 @@ class ConsultantSerializer(serializers.ModelSerializer):
             'teaser',
             'linkedin',
             'cv',
-            'image'
+            'image',
+            'technologies',
+            'tags',
         ]
