@@ -98,13 +98,13 @@
         <h5 style="text-align: center; color: #043962;padding-top: 35px; margin-top:0px;"><b>{% trans "Projects" %}</b></h5>
         <ul>
             {% for project in object.project_set.all %}
-            <li><a href="{% url 'projects-detail' project.slug %}"><b>{{ project.name }}<span style="color: #043962">:</span> </b></a>
-                {% if project.technologies.all %}
-                {% for tech in project.technologies.all %}
-                <span><a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }} <span style="color: #043962">| </span> </a></span>
-                {% endfor %}
-                {% endif %}
-            </li>
+                <li><a href="{% url 'projects-detail' project.slug %}"><b>{{ project.name }}<span style="color: #043962">:</span> </b></a>
+                    {% if project.technologies.all %}
+                        {% for tech in project.technologies.all %}
+                            {% if not forloop.first %}<span style="color: #043962"> | </span>{% endif %}<a href="{% url 'technologies-detail' tech.slug %}">{{ tech.name }}</a>
+                        {% endfor %}
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </div>
