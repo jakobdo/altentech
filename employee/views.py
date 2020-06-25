@@ -21,4 +21,4 @@ class EmployeeListView(ListView):
         tag = self.request.GET.get('tag')
         if tag:
             queryset = queryset.filter(tags__slug=tag)
-        return queryset
+        return queryset.order_by('?')
