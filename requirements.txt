@@ -1,6 +1,8 @@
 django
 django-stdimage
+django-stdimage-serializer
 django-admin-honeypot
+djangorestframework
 
 ipython
 pylint

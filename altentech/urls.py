@@ -17,8 +17,16 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework import routers
 
 from base.views import ContactView, IndexView
+from client.viewsets import ClientViewSet
+from employee.viewsets import ConsultantViewSet
+from frontend.views import ReactIndexView
+
+router = routers.DefaultRouter()
+router.register(r'clients', ClientViewSet)
+router.register(r'consultants', ConsultantViewSet)
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
@@ -26,9 +34,13 @@ urlpatterns = [
     path('projects/', include('project.urls')),
     path('clients/', include('client.urls')),
     path('technologies/', include('technology.urls')),
-    path('about', ContactView.as_view(), name="about-us"),
+    path('about/', ContactView.as_view(), name="about-us"),
+    path('react/', ReactIndexView.as_view(), name="react-index"),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('alten_dk_admin/', admin.site.urls),
+
+    path('api/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]
 
 
