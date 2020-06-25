@@ -9,7 +9,7 @@
     {% for project in object_list %}
     <div class="col s12 m6 l4">
         <div class="card card-content center-align" style="padding:10%">
-            <h6 href="{% url 'projects-detail' project.slug %}">{{ project }}</h6>
+            <h6> <a href="{% url 'projects-detail' project.slug %}">{{ project }}</a></h6>
             {% if project.get_client_or_industry %}
             <p style="color: #008BD2;">{{project.get_client_or_industry}}</p><br>
             {% endif %}
