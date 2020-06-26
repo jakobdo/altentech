@@ -15,5 +15,5 @@ class IndexView(DetailView):
         return obj
 
 
-class ContactView(TemplateView):
+class AboutView(TemplateView):
     template_name = 'base/about.html'

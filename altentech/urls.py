@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
 
-from base.views import ContactView, IndexView
+from base.views import AboutView, IndexView
 from client.viewsets import ClientViewSet, IndustryViewSet
 from employee.viewsets import ConsultantViewSet
 from frontend.views import ReactIndexView
@@ -41,7 +41,7 @@ urlpatterns = [
     path('projects/', include('project.urls')),
     path('clients/', include('client.urls')),
     path('technologies/', include('technology.urls')),
-    path('about/', ContactView.as_view(), name="about-us"),
+    path('about/', AboutView.as_view(), name="about-us"),
     path('react/', ReactIndexView.as_view(), name="react-index"),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('alten_dk_admin/', admin.site.urls),
