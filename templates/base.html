@@ -44,6 +44,23 @@
 </head>
 
 <body>
+    <div class="fixed-action-btn" style="bottom: 45%;">
+        <a class="btn-floating btn-large blue">
+            <i class="large material-icons">contacts</i>
+        </a>
+        <ul>
+            <li>
+                <a href="tel:004541423030" class="btn-floating red">
+                    <i class="material-icons">phone</i>
+                </a>
+            </li>
+            <li>
+                <a href="mailto:tech@alten.dk" class="btn-floating green">
+                    <i class="material-icons">email</i>
+                </a>
+            </li>
+        </ul>
+    </div>
     <header>
         <nav>
             <div class="nav-wrapper container">
@@ -115,6 +132,9 @@
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
+            $('.fixed-action-btn').floatingActionButton({
+                direction: 'left'
+            });
         });
     </script>
     {% block bodyend %}{% endblock %}
