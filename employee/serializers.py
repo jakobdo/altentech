@@ -22,11 +22,12 @@ class ExperienceSerializer(serializers.ModelSerializer):
 
 class ConsultantSerializer(serializers.ModelSerializer):
     image = StdImageField()
-    technologies = TechnologyLevelSerializer(
+    technologyLevels = TechnologyLevelSerializer(
         source='technologylevel_set',
         many=True
     )
     experience = ExperienceSerializer(source='jobs', many=True)
+    fullname = serializers.SerializerMethodField()
 
     class Meta:
         model = Employee
@@ -34,6 +35,7 @@ class ConsultantSerializer(serializers.ModelSerializer):
             'pk',
             'firstname',
             'lastname',
+            'fullname',
             'slug',
             'jobtitle',
             'description',
@@ -41,7 +43,10 @@ class ConsultantSerializer(serializers.ModelSerializer):
             'linkedin',
             'cv',
             'image',
-            'technologies',
+            'technologyLevels',
             'tags',
             'experience'
         ]
+
+    def get_fullname(self, obj):
+        return obj.get_full_name()

@@ -3,6 +3,7 @@ django-stdimage
 django-stdimage-serializer
 django-admin-honeypot
 djangorestframework
+django-cors-headers
 
 ipython
 pylint

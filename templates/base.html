@@ -44,46 +44,31 @@
 </head>
 
 <body>
-    <div class="fixed-action-btn" style="bottom: 45%;">
-        <a class="btn-floating btn-large blue">
-            <i class="large material-icons">contacts</i>
-        </a>
-        <ul>
-            <li>
-                <a href="tel:004541423030" class="btn-floating red">
-                    <i class="material-icons">phone</i>
-                </a>
-            </li>
-            <li>
-                <a href="mailto:tech@alten.dk" class="btn-floating green">
-                    <i class="material-icons">email</i>
-                </a>
-            </li>
-        </ul>
-    </div>
     <header>
-        <nav>
-            <div class="nav-wrapper container">
-                <a href="{% url 'index' %}" class="brand-logo">ALTEN Denmark</a>
-                <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    {% for link in links %}
-                        <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text|upper }}</a></li>    
-                    {% endfor %}
-                    <li>
-                        <a href="tel:004541423030"><i class="material-icons">phone</i></a>
-                    </li>
-                    <li>
-                        <a href="mailto:tech@alten.dk"><i class="material-icons">email</i></a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="sidenav" id="mobile-navbar">
-            {% for link in links %}
-                <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>    
-            {% endfor %}
-        </ul>
+        <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper container">
+                    <a href="{% url 'index' %}" class="brand-logo">ALTEN Denmark</a>
+                    <a href="#" data-target="mobile-navbar" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down">
+                        {% for link in links %}
+                            <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text|upper }}</a></li>    
+                        {% endfor %}
+                        <li>
+                            <a href="tel:004541423030"><i class="material-icons">phone</i></a>
+                        </li>
+                        <li>
+                            <a href="mailto:tech@alten.dk"><i class="material-icons">email</i></a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <ul class="sidenav" id="mobile-navbar">
+                {% for link in links %}
+                    <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>    
+                {% endfor %}
+            </ul>
+        </div>
     </header>
     <main>
         {% block base_content %}{% endblock %}
@@ -132,9 +117,6 @@
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
-            $('.fixed-action-btn').floatingActionButton({
-                direction: 'left'
-            });
         });
     </script>
     {% block bodyend %}{% endblock %}
