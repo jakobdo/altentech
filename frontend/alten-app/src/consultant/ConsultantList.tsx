@@ -2,26 +2,34 @@ import React, { useState, useEffect } from 'react';
 
 import { IConsultant } from '../models/Consultant';
 import API from '../utils/API';
-import { Row, Col, Chip, Card, Icon } from 'react-materialize';
+import { Row, Col, Chip, Card } from 'react-materialize';
 import { ITag } from '../models/Tag';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 
 function ConsultantList(){
-    let { tagSlug } = useParams();
-    console.log(tagSlug);
+    const { tagSlug } = useParams();
     const [consultants, setConsultants] = useState<IConsultant[]>([]);
     const [tags, setTags] = useState<ITag[]>([]);
+    const [tag, setTag] = useState<ITag | null>(null);
+    const location = useLocation();
 
     useEffect(() => {
         const fetchConsultants = async() => {
-            const result = await API.get('/consultants/');
+            let url = '/consultants/';
+            if(tagSlug){
+                url = `/consultants/tags/${tagSlug}/`
+            }
+            const result = await API.get(url);
             setConsultants(result.data);
         };
+        fetchConsultants();
+    }, [location]);
+
+    useEffect(() => {
         const fetchTags = async() => {
             const result = await API.get('/tags/');
             setTags(result.data);
         };
-        fetchConsultants();
         fetchTags();
     }, []);
 

@@ -32,7 +32,6 @@ class ConsultantSerializer(serializers.ModelSerializer):
     class Meta:
         model = Employee
         fields = [
-            'pk',
             'firstname',
             'lastname',
             'fullname',

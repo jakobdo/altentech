@@ -17,23 +17,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from rest_framework import routers
 
 from base.views import AboutView, IndexView
-from client.viewsets import ClientViewSet, IndustryViewSet
-from employee.viewsets import ConsultantViewSet
 from frontend.views import ReactIndexView
-from project.viewsets import ProjectViewSet
-from tag.viewsets import TagViewSet
-from technology.viewsets import TechnologyViewSet
-
-router = routers.DefaultRouter()
-router.register(r'clients', ClientViewSet)
-router.register(r'consultants', ConsultantViewSet)
-router.register(r'industries', IndustryViewSet)
-router.register(r'projects', ProjectViewSet)
-router.register(r'tags', TagViewSet)
-router.register(r'technologies', TechnologyViewSet)
 
 urlpatterns = [
     path('', IndexView.as_view(), name="index"),
@@ -45,9 +31,7 @@ urlpatterns = [
     path('react/', ReactIndexView.as_view(), name="react-index"),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('alten_dk_admin/', admin.site.urls),
-
-    path('api/', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls')),
+    path('api/', include('api.urls')),
 ]
 
 

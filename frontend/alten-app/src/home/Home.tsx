@@ -12,7 +12,7 @@ function Home() {
 
     useEffect(() => {
         const fetchData = async() => {
-            const result = await API.get('/consultants/0/');
+            const result = await API.get('/consultants/get_random/');
             setConsultant(result.data);
         };
         fetchData();
