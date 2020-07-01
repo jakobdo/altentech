@@ -49,3 +49,17 @@ class ConsultantSerializer(serializers.ModelSerializer):
 
     def get_fullname(self, obj):
         return obj.get_full_name()
+
+
+class ConsultantSimpleSerializer(serializers.ModelSerializer):
+    fullname = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Employee
+        fields = [
+            'fullname',
+            'slug',
+        ]
+
+    def get_fullname(self, obj):
+        return obj.get_full_name()

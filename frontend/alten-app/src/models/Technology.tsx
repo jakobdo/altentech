@@ -4,3 +4,8 @@ export interface ITechnology {
     name: string;
     slug: string;
 }
+
+export interface ITechnologySimple {
+    name: string;
+    slug: string;
+}

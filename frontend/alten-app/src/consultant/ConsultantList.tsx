@@ -4,14 +4,12 @@ import { IConsultant } from '../models/Consultant';
 import API from '../utils/API';
 import { Row, Col, Chip, Card } from 'react-materialize';
 import { ITag } from '../models/Tag';
-import { Link, useParams, useLocation } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 function ConsultantList(){
     const { tagSlug } = useParams();
     const [consultants, setConsultants] = useState<IConsultant[]>([]);
     const [tags, setTags] = useState<ITag[]>([]);
-    const [tag, setTag] = useState<ITag | null>(null);
-    const location = useLocation();
 
     useEffect(() => {
         const fetchConsultants = async() => {
@@ -23,7 +21,7 @@ function ConsultantList(){
             setConsultants(result.data);
         };
         fetchConsultants();
-    }, [location]);
+    }, [tagSlug]);
 
     useEffect(() => {
         const fetchTags = async() => {

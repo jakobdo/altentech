@@ -6,4 +6,10 @@ from technology.models import Technology
 class TechnologySerializer(serializers.ModelSerializer):
     class Meta:
         model = Technology
-        fields = ['pk', 'name', 'slug', 'description']
+        fields = ['name', 'slug', 'description']
+
+
+class TechnologySimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Technology
+        fields = ['name', 'slug']

@@ -12,9 +12,13 @@ export interface IConsultant {
     jobtitle: string;
     lastname: string;
     linkedin: string;
-    pk: number;
     slug: string;
     tags: number[];
     teaser: string;
     technologyLevels: ITechnologyLevel[];
+}
+
+export interface IConsultantSimple {
+    fullname: string;
+    slug: string;
 }
