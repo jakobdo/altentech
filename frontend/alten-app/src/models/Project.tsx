@@ -10,3 +10,9 @@ export interface IProject {
     technologies: ITechnologySimple[];
     consultants: IConsultantSimple[];
 }
+
+export interface IProjectSimple {
+    name: string;
+    slug: string;
+    technologies: ITechnologySimple[];
+}

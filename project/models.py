@@ -24,7 +24,7 @@ class Project(models.Model):
         null=True
     )
     technologies = models.ManyToManyField(Technology)
-    consultants = models.ManyToManyField(Employee)
+    consultants = models.ManyToManyField(Employee, related_name='projects')
 
     def __str__(self):
         return self.name

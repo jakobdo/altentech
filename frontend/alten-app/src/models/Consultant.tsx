@@ -1,6 +1,7 @@
 import { IExperience } from './Experience';
 import { IImage } from './Image';
 import { ITechnologyLevel } from './TechnologyLevel';
+import { IProjectSimple } from './Project';
 
 export interface IConsultant {
     cv: string;
@@ -16,6 +17,7 @@ export interface IConsultant {
     tags: number[];
     teaser: string;
     technologyLevels: ITechnologyLevel[];
+    projects: IProjectSimple[];
 }
 
 export interface IConsultantSimple {

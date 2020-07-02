@@ -1,11 +1,10 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
+from api.serializers import (ConsultantSerializer, ProjectSerializer,
+                             TagSerializer)
 from employee.models import Employee
-from employee.serializers import ConsultantSerializer
 from project.models import Project
-from project.serializers import ProjectSerializer
 from tag.models import Tag
-from tag.serializers import TagSerializer
 
 
 class ConsultantList(ListAPIView):

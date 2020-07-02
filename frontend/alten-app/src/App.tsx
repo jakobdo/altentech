@@ -17,6 +17,7 @@ import {
 import Home from './home/Home';
 import ProjectList from './project/ProjectList';
 import ConsultantList from './consultant/ConsultantList';
+import ConsultantDetail from './consultant/ConsultantDetail';
 
 function App() {
     return (
@@ -62,7 +63,7 @@ function App() {
                             <ConsultantList />
                         </Route>
                         <Route path="/consultants/:consultantSlug">
-                            <div>Consultant Detail</div>
+                            <ConsultantDetail />
                         </Route>
                         <Route exact={true} path="/projects">
                             <ProjectList />
