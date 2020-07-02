@@ -41,7 +41,8 @@ class Employee(models.Model):
     )
     technologies = models.ManyToManyField(
         Technology,
-        through='TechnologyLevel'
+        through='TechnologyLevel',
+        related_name='consultants'
     )
     tags = models.ManyToManyField(Tag)
 

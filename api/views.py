@@ -1,10 +1,11 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from api.serializers import (ConsultantSerializer, ProjectSerializer,
-                             TagSerializer)
+                             TagSerializer, TechnologySerializer)
 from employee.models import Employee
 from project.models import Project
 from tag.models import Tag
+from technology.models import Technology
 
 
 class ConsultantList(ListAPIView):
@@ -52,4 +53,15 @@ class ProjectList(ListAPIView):
 class ProjectDetail(RetrieveAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+    lookup_field = 'slug'
+
+
+class TechnologyList(ListAPIView):
+    queryset = Technology.objects.all()
+    serializer_class = TechnologySerializer
+
+
+class TechnologyDetail(RetrieveAPIView):
+    queryset = Technology.objects.all()
+    serializer_class = TechnologySerializer
     lookup_field = 'slug'

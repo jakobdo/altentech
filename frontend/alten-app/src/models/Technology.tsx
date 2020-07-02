@@ -1,8 +1,10 @@
+import { IConsultantSimple } from "./Consultant";
+
 export interface ITechnology {
-    id: number;
-    level: number;
+    description: string;
     name: string;
     slug: string;
+    consultants: IConsultantSimple[];
 }
 
 export interface ITechnologySimple {

@@ -13,4 +13,6 @@ urlpatterns = [
     path('tags/', views.TagList.as_view(), name="api-tag-list"),
     path('projects/', views.ProjectList.as_view(), name="api-project-list"),
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name="api-project-detail"),
+    path('technologies/', views.TechnologyList.as_view(), name="api-technology-list"),
+    path('technologies/<slug:slug>/', views.TechnologyDetail.as_view(), name="api-technology-detail"),
 ]

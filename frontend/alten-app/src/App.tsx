@@ -19,6 +19,9 @@ import ProjectList from './project/ProjectList';
 import ConsultantList from './consultant/ConsultantList';
 import ConsultantDetail from './consultant/ConsultantDetail';
 import ProjectDetail from './project/ProjectDetail';
+import About from './about/About';
+import TechnologyList from './technology/TechnologyList';
+import TechnologyDetail from './technology/TechnologyDetail';
 
 function App() {
     return (
@@ -72,14 +75,14 @@ function App() {
                         <Route path="/projects/:projectSlug">
                             <ProjectDetail />
                         </Route>
-                        <Route path="/technologies">
-                            <div>Technologies</div>
+                        <Route exact={true} path="/technologies">
+                            <TechnologyList />
                         </Route>
                         <Route path="/technologies/:technologySlug">
-                            <div>Technology Detail</div>
+                            <TechnologyDetail />
                         </Route>
                         <Route path="/about">
-                            <div>About</div>
+                            <About />
                         </Route>
                         <Route path="*">
                             <div>Whoops. Something went wrong! :(</div>
