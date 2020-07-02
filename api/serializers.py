@@ -29,12 +29,15 @@ class ProjectSimpleSerializer(serializers.ModelSerializer):
 
 class ConsultantSimpleSerializer(serializers.ModelSerializer):
     fullname = serializers.SerializerMethodField()
+    image = StdImageField()
 
     class Meta:
         model = Employee
         fields = [
             'fullname',
-            'slug',
+            'image',
+            'jobtitle',
+            'slug'
         ]
 
     def get_fullname(self, obj):

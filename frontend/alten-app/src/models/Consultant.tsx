@@ -22,5 +22,7 @@ export interface IConsultant {
 
 export interface IConsultantSimple {
     fullname: string;
+    image: IImage;
+    jobtitle: string;
     slug: string;
 }

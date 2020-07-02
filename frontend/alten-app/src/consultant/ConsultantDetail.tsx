@@ -17,8 +17,7 @@ function ConsultantDetail(){
 
     useEffect(() => {
         const fetchConsultant = async() => {
-            const url = `/consultants/${consultantSlug}/`
-            const result = await API.get(url);
+            const result = await API.get(`/consultants/${consultantSlug}/`);
             setConsultant(result.data);
         };
         fetchConsultant();

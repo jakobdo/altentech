@@ -18,6 +18,7 @@ import Home from './home/Home';
 import ProjectList from './project/ProjectList';
 import ConsultantList from './consultant/ConsultantList';
 import ConsultantDetail from './consultant/ConsultantDetail';
+import ProjectDetail from './project/ProjectDetail';
 
 function App() {
     return (
@@ -69,7 +70,7 @@ function App() {
                             <ProjectList />
                         </Route>
                         <Route path="/projects/:projectSlug">
-                            <div>Project Detail</div>
+                            <ProjectDetail />
                         </Route>
                         <Route path="/technologies">
                             <div>Technologies</div>
