@@ -106,3 +106,7 @@ main {
 .btn:hover {
     background-color: #ffba00a8
 }
+
+footer h5 {
+    color: white;
+}
