@@ -33,7 +33,7 @@ function TechnologyDetail(){
                             <h2>Consultants</h2>
                             <Row>
                                 {technology.consultants.map((consultant: IConsultantSimple) => (
-                                    <ConsultantLink consultant={consultant} />
+                                    <ConsultantLink key={consultant.slug} consultant={consultant} />
                                 ))}
                             </Row>
                         </React.Fragment>

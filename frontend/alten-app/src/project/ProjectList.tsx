@@ -23,7 +23,7 @@ function ProjectList(){
             <h1>Projects</h1>
             <Row>
                 {projects.map((project: IProject) => 
-                    <Col s={12} m={6} l={4}>
+                    <Col s={12} m={6} l={4} key={project.slug}>
                         <Card
                             textClassName="center-align"
                         >
@@ -58,7 +58,10 @@ function ProjectList(){
                             {project.technologies.length > 0 && (
                                 <div className="left-align">
                                     {project.technologies.map((technology: ITechnologySimple) => (
-                                        <Link to={`/technologies/${technology.slug}`}>
+                                        <Link 
+                                            to={`/technologies/${technology.slug}`}
+                                            key={technology.slug}
+                                        >
                                             <Chip>
                                                 {technology.name}
                                             </Chip>

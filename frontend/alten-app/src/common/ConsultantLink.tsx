@@ -14,6 +14,7 @@ function ConsultantLink({consultant}:ConsultantLinkProps){
             <Card
                 actions={[
                     <Link
+                        key={`consult_key_${consultant.slug}`}
                         className="waves-effect waves-light btn" 
                         to={`/consultants/${consultant.slug}`}
                     >
