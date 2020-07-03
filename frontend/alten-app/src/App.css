@@ -17,6 +17,18 @@ h1, h2, h3, h4, h5, h6 {
     color: #043962;
 }
 
+h1 {
+    font-size: 3.5rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
 
 p {
     display: block;
@@ -109,4 +121,26 @@ main {
 
 footer h5 {
     color: white;
+}
+
+.chip {
+    background-color: #0070C0;
+    color: white;
+}
+
+.collection a.collection-item {
+    color: #008bd2;
+}
+.waves-light {
+    padding-top: 0;
+}
+
+.card-main {
+    padding-left:10%;
+    padding-right:10%;
+}
+
+.card .card-title {
+    font-size: 1.2rem;
+    font-weight: 400;
 }

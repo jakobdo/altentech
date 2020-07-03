@@ -39,9 +39,11 @@ function ProjectList(){
                                     project.industry
                                 )}</strong>
                             )}
+                       
                             <div className="left-align">{project.description}</div>
                             {project.consultants.length > 0 && (
                                 <div className="left-align">
+                                    <br />
                                     <strong>Consultants:</strong>
                                     {project.consultants.map((consultant: IConsultantSimple) => (
                                         <div key={consultant.slug}>
@@ -52,6 +54,7 @@ function ProjectList(){
                                     ))}
                                 </div>
                             )}
+                            <br/>
                             {project.technologies.length > 0 && (
                                 <div className="left-align">
                                     {project.technologies.map((technology: ITechnologySimple) => (

@@ -14,17 +14,19 @@ function ConsultantFrontpage({consultant}:ConsultantFrontpageProps){
     return (
         <Row>
             <Col s={12} m={4}>
+                <Link to={`/consultants/${consultant.slug}`}>
                 <img
                     className="circle responsive-img"
                     src={consultant.image.medium} 
                     alt={consultant.fullname} 
-                />
+                    />
+                </Link>
             </Col>
             <Col s={12} m={8}>
                 <h3>
                     <Link to={`/consultants/${consultant.slug}`}>{consultant.fullname}</Link>
                 </h3>
-                <h5>{consultant.jobtitle}</h5>
+                <h6>{consultant.jobtitle}</h6>
                 <p>{consultant.teaser}</p>
                 <TechnologyLevels technologyLevels={consultant.technologyLevels} />
             </Col>

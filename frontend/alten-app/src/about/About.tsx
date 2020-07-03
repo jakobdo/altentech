@@ -48,7 +48,7 @@ function About() {
                             </td>
                         </tr>
                         <tr>
-                            <td>Address:</td>
+                                <td><h6>Address:</h6></td>
                             <td> <a href="https://goo.gl/maps/AFAW4SZ9QsACbZF97" target="_blank" rel="noopener noreferrer">Christians Brygge 28<br/> 1559 Copenhagen <br/> Denmark </a> </td>
                         </tr>
                     </Table>

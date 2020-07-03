@@ -31,16 +31,18 @@ function ConsultantDetail(){
         <div className="container">
             {consultant ? (
                 <React.Fragment>
-                    <Card>
+                    <Card className="card-main">
                         <div className="center-align">
                             <img className="circle responsive-img" src={consultant.image.medium} alt={consultant.fullname} />
                         </div>
                         <div className="center-align">
-                            <h1>{consultant.fullname}</h1>
-                            <h2>{consultant.jobtitle}</h2>
+                            <h2>{consultant.fullname}</h2>
+                            <h5>{consultant.jobtitle}</h5>
                             <hr />
                         </div>
                         <div className="left-align">{consultant.description}</div>
+                        <br />
+                        <br />
                         <Row className="center-align">
                             <Col s={6}>
                                 <a
@@ -61,6 +63,7 @@ function ConsultantDetail(){
                                 </a>
                             </Col>
                         </Row>
+                        <br/>
                         {consultant.linkedin && (
                             <div className="center-align">
                                 <a 
