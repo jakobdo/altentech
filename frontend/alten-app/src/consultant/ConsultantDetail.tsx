@@ -11,6 +11,8 @@ import { ITechnologySimple } from '../models/Technology';
 import TechSeparator from '../common/TechSeparator';
 import { IExperience } from '../models/Experience';
 
+import './ConsultantDetail.css';
+
 function ConsultantDetail(){
     const { consultantSlug } = useParams();
     const [consultant, setConsultant] = useState<IConsultant | null>(null);
@@ -93,7 +95,7 @@ function ConsultantDetail(){
                             <Card>
                                 <h2 className="center-align">Projects</h2>
                                 {consultant.projects.map((project: IProjectSimple) => (
-                                    <React.Fragment>
+                                    <React.Fragment key={project.slug}>
                                         <Link to={`/projects/${project.slug}/`}>{project.name}</Link> : 
                                         <React.Fragment>
                                             {project.technologies.map<React.ReactNode>((technology: ITechnologySimple) => (

@@ -22,6 +22,7 @@ import ProjectDetail from './project/ProjectDetail';
 import About from './about/About';
 import TechnologyList from './technology/TechnologyList';
 import TechnologyDetail from './technology/TechnologyDetail';
+import './App.css';
 
 function App() {
     return (

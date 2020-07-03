@@ -39,7 +39,7 @@ function ConsultantList(){
                     <Chip close={false}>All</Chip>
                 </Link>
                 {tags.map((tag: ITag) => 
-                    <Link to={`/consultants/tags/${tag.slug}`}>
+                    <Link key={tag.slug} to={`/consultants/tags/${tag.slug}`}>
                         <Chip close={false}>{tag.name}</Chip>
                     </Link>
                 )}
@@ -47,10 +47,10 @@ function ConsultantList(){
             <hr />
             <Row>
                 {consultants.map((consultant: IConsultant) => 
-                    <Col s={12} m={6} l={4}>
+                    <Col key={consultant.slug} s={12} m={6} l={4}>
                         <Card
                             actions={[
-                                <Link 
+                                <Link key={consultant.slug}
                                     to={`/consultants/${consultant.slug}`}
                                     className="waves-effect waves-light btn"
                                 >LEARN MORE</Link>
