@@ -47,7 +47,7 @@ function ConsultantList(){
             <hr />
             <Row>
                 {consultants.map((consultant: IConsultant) => 
-                    <Col s={12} m={6} l={4} xl={3}>
+                    <Col s={12} m={6} l={4}>
                         <Card
                             actions={[
                                 <Link 
