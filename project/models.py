@@ -2,6 +2,7 @@ from django.db import models
 
 from client.models import Client, Industry
 from employee.models import Employee
+from tag.models import ServiceArea
 from technology.models import Technology
 
 
@@ -23,6 +24,7 @@ class Project(models.Model):
         blank=True,
         null=True
     )
+    service_area = models.ManyToManyField(ServiceArea, related_name='service_projects')
     technologies = models.ManyToManyField(Technology)
     consultants = models.ManyToManyField(Employee, related_name='projects')
 
