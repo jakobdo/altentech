@@ -21,7 +21,7 @@ function Home() {
     return (
         <div>
             <Parallax
-                image={<img alt="" src="https://altentechnology.dk/static/base/gfx/parallax1.jpg"/>}
+                image={<img alt="" src="https://altentechnology.dk/static/base/gfx/parallax1_5.jpg"/>}
                 options={{
                     responsiveThreshold: 0
                 }}

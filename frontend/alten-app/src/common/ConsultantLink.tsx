@@ -29,7 +29,7 @@ function ConsultantLink({consultant}:ConsultantLinkProps){
                         alt={consultant.fullname} 
                     />
                 </Link>
-                <h3>{consultant.fullname}</h3>
+                <h5>{consultant.fullname}</h5>
                 <strong>{consultant.jobtitle}</strong>
             </Card>
         </Col>

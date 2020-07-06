@@ -93,7 +93,7 @@ function App() {
                 <footer className="page-footer black">
                     <div className="container">
                         <Row>
-                            <Col s={12} l={4}>
+                            <Col s={12} l={5}>
                                 <h5>ALTEN Denmark ApS</h5>
                                 <address>
                                     C/o Work Share Grow<br />
@@ -108,7 +108,7 @@ function App() {
                                 <a target="_blank" rel="noopener noreferrer" href="https://alten.com">Web</a><br />
                                 <a target="_blank" rel="noopener noreferrer" href="https://dk.linkedin.com/company/alten-danmark">LinkedIn</a>
                             </Col>
-                            <Col s={12} l={4}>
+                            <Col s={12} l={3}>
                                 <h5>Pages</h5>
                                 <Link to="/consultants">CONSULTANTS</Link><br />
                                 <Link to="/projects">PROJECTS</Link><br />
