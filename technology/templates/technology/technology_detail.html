@@ -27,11 +27,11 @@
 
 <br>
 <div>
-{% if object.employee_set.all %}
+{% if object.consultants.all %}
     <h4 class="center-align">{% trans "Consultants" %} </h4>
 </div>
 <div class="row">
-    {% for consultant in object.employee_set.all %}
+    {% for consultant in object.consultants.all %}
      <div class="col s12 m6 l4">
         <div class="card">
             <div class="card-content center-align">
