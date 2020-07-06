@@ -46,6 +46,11 @@
 <body>
     <header>
         <div class="navbar-fixed">
+            <ul id="dropdown1" class="dropdown-content">
+                <li><a href="#!">41423030</a></li>
+                <li class="divider"></li>
+                <li><a href="tel:004541423030">Call now</a></li>
+              </ul>
             <nav>
                 <div class="nav-wrapper container">
                     <a href="{% url 'index' %}" class="brand-logo">ALTEN Denmark</a>
@@ -55,20 +60,22 @@
                             <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text|upper }}</a></li>    
                         {% endfor %}
                         <li>
-                            <a href="tel:004541423030"><i class="material-icons">phone</i></a>
+                            <a class="dropdown-trigger" href="#!" data-target="dropdown1"><i class="material-icons">phone</i></a>
                         </li>
+                        
                         <li>
                             <a href="mailto:tech@alten.dk"><i class="material-icons">email</i></a>
                         </li>
                     </ul>
                 </div>
             </nav>
-            <ul class="sidenav" id="mobile-navbar">
-                {% for link in links %}
-                    <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>    
-                {% endfor %}
-            </ul>
         </div>
+        <ul class="sidenav" id="mobile-navbar">
+            {% for link in links %}
+                <li{% if link.active %} class="active"{% endif %}><a href="{{ link.url }}">{{ link.text }}</a></li>    
+            {% endfor %}
+            <li><a href="tel:004541423030">+45 41 42 30 30</a></li>
+        </ul>
     </header>
     <main>
         {% block base_content %}{% endblock %}
@@ -117,6 +124,7 @@
     <script>
         $(document).ready(function () {
             $('.sidenav').sidenav();
+            $(".dropdown-trigger").dropdown();
         });
     </script>
     {% block bodyend %}{% endblock %}
