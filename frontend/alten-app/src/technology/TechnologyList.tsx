@@ -22,7 +22,7 @@ function TechnologyList(){
             <Row>
                 <div className="collection">
                     {technologies.map((technology: ITechnology) => 
-                        <Col s={12} m={6} l={4} xl={3}>
+                        <Col s={12} m={6} l={4} xl={3} key={technology.slug}>
                             <div className="card"
                             >
                                 <Link 

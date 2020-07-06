@@ -40,7 +40,7 @@ function ProjectDetail(){
                                 <tr>
                                     <th>Technologies: </th>
                                     <td>{project.technologies.map((tech: ITechnologySimple) => (
-                                        <React.Fragment>
+                                        <React.Fragment key={tech.slug}>
                                             <Link to="/">{tech.name}</Link><br />
                                         </React.Fragment>
                                     ))}</td>
@@ -53,7 +53,7 @@ function ProjectDetail(){
                             <h2>Consultants</h2>
                             <Row>
                                 {project.consultants.map((consultant: IConsultantSimple) => (
-                                    <ConsultantLink consultant={consultant} />
+                                    <ConsultantLink key={consultant.slug} consultant={consultant} />
                                 ))}
                             </Row>
                         </React.Fragment>

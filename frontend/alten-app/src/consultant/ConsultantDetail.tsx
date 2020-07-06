@@ -101,9 +101,12 @@ function ConsultantDetail(){
                                     <React.Fragment key={project.slug}>
                                         <Link to={`/projects/${project.slug}/`}>{project.name}</Link> : 
                                         <React.Fragment>
-                                            {project.technologies.map<React.ReactNode>((technology: ITechnologySimple) => (
-                                                <Link to={`/technologies/${technology.slug}/`}>{technology.name}</Link>
-                                            )).reduce((prev, curr) => [prev, <TechSeparator />, curr])}
+                                            {project.technologies.map<React.ReactNode>((technology: ITechnologySimple, index: number) => (
+                                                <Link 
+                                                    to={`/technologies/${technology.slug}/`}
+                                                    key={`tech_key_${index}`}
+                                                >{technology.name}</Link>
+                                            )).reduce((prev, curr, index) => [prev, <TechSeparator key={`sep_key_${index}`} />, curr])}
                                         </React.Fragment>
                                     </React.Fragment>
                                 ))}
@@ -120,8 +123,11 @@ function ConsultantDetail(){
                             <Card>
                                 <h2 className="center-align">Experience</h2>
                                 <div className="timeline">
-                                    {consultant.experience.map((job: IExperience) => (
-                                        <div className="timeline-event">
+                                    {consultant.experience.map((job: IExperience, index: number) => (
+                                        <div 
+                                            className="timeline-event" 
+                                            key={`timeline_key_${index}`}
+                                        >
                                             <div className="card timeline-content alten-light-blue">
                                                 <div className="card-content">
                                                     <span className="card-title alten-header-color">{job.start} - {job.company}</span>

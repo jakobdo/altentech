@@ -9,11 +9,11 @@ function About() {
             <Card>
             <div className="section white">
                 <a href="https://www.alten.com/" target="_blank" rel="noopener noreferrer">
-                <img
-                    alt=""
-                    src="https://altentechnology.dk/static/base/gfx/alten.sweden.jpg"
-                    width="100%"
-                />
+                    <img
+                        alt="Alten Sweden"
+                        src="https://altentechnology.dk/static/base/gfx/alten.sweden.jpg"
+                        width="100%"
+                    />
                 </a>
                 <p className="grey-text text-darken-3 lighten-3">
                     ALTEN Group supports the development strategy of its customers in the fields of innovation, R&D and technological information systems.
@@ -24,34 +24,26 @@ function About() {
                 </div>
                 <Row>
                     <Col s={12} m={6}>
-                    <Table>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6>Website:</h6>
-                            </td>
-                            <td>
-                                <a href="https://www.alten.com/" target="_blank" rel="noopener noreferrer"> ALTEN.com </a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <h6>Social media:</h6>
-                            </td>
-                            <td>
-                                <a href="https://www.linkedin.com/company/alten-danmark/about/" target="_blank" rel="noopener noreferrer"> LinkedIn </a>
-                            </td>
-                        </tr>
-                        <tr>
-                                <td><h6>Address:</h6></td>
-                            <td> <a href="https://goo.gl/maps/AFAW4SZ9QsACbZF97" target="_blank" rel="noopener noreferrer">Christians Brygge 28<br/> 1559 Copenhagen <br/> Denmark </a> </td>
-                        </tr>
-                    </Table>
+                        <Table>
+                            <tbody>
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Website:</strong></td>
+                                    <td><a href="https://www.alten.com/" target="_blank" rel="noopener noreferrer"> ALTEN.com </a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Social media:</strong></td>
+                                    <td><a href="https://www.linkedin.com/company/alten-danmark/about/" target="_blank" rel="noopener noreferrer"> LinkedIn </a></td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Address:</strong></td>
+                                    <td><a href="https://goo.gl/maps/AFAW4SZ9QsACbZF97" target="_blank" rel="noopener noreferrer">Christians Brygge 28<br/> 1559 Copenhagen <br/> Denmark </a></td>
+                                </tr>
+                            </tbody>
+                        </Table>
                     </Col>
                 </Row>
             </Card>
@@ -73,36 +65,24 @@ function About() {
                         <Col s={12} m={6}>
                             <h5>Katrine Villumsen</h5>
                             <Table>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td> 
-                                        <h6>Social media:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="https://www.linkedin.com/in/katrine-villumsen/" target="_blank" rel="noopener noreferrer"> LinkedIn </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Phone number:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="tel:+4541423030">+4541423030</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Email:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="mailto:katrine.villumsen@alten.dk">katrine.villumsen@alten.dk</a>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Social media:</strong></td>
+                                        <td><a href="https://www.linkedin.com/in/katrine-villumsen/" target="_blank" rel="noopener noreferrer"> LinkedIn </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phone number:</strong></td>
+                                        <td><a href="tel:+4541423030">+4541423030</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email:</strong></td>
+                                        <td><a href="mailto:katrine.villumsen@alten.dk">katrine.villumsen@alten.dk</a></td>
+                                    </tr>
+                                </tbody>
                             </Table>
                         </Col>
                     </Row>
@@ -120,36 +100,24 @@ function About() {
                         <Col s={12} m={6}>
                             <h5>Nikolaj Enevoldsen</h5>
                             <Table>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Social media:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="https://www.linkedin.com/in/nikolajenevoldsen2018/" target="_blank" rel="noopener noreferrer"> LinkedIn </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Phone number:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="tel:+4525529498">+4525529498</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Email:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="mailto:nikolaj.enevoldsen@alten.dk">nikolaj.enevoldsen@alten.dk</a>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Social media:</strong></td>
+                                        <td><a href="https://www.linkedin.com/in/nikolajenevoldsen2018/" target="_blank" rel="noopener noreferrer"> LinkedIn </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phone number:</strong></td>
+                                        <td><a href="tel:+4525529498">+4525529498</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email:</strong></td>
+                                        <td><a href="mailto:nikolaj.enevoldsen@alten.dk">nikolaj.enevoldsen@alten.dk</a></td>
+                                    </tr>
+                                </tbody>
                             </Table>
                         </Col>
                     </Row>
@@ -173,36 +141,24 @@ function About() {
                         <Col s={12} m={6}>
                             <h5>Katja Linnea Serritzlew</h5>
                             <Table>
-                                <tr>
-                                    <td>
-                                    </td>
-                                    <td>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Social media:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="https://www.linkedin.com/in/katja-linnea-serritzlew/" target="_blank" rel="noopener noreferrer"> LinkedIn </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Phone number:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="tel:+4541300003">+4541300003</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h6>Email:</h6>
-                                    </td>
-                                    <td>
-                                        <a href="mailto:katja.serritzlew@alten.dk">katja.serritzlew@alten.dk</a>
-                                    </td>
-                                </tr>
+                                <tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Social media:</strong></td>
+                                        <td><a href="https://www.linkedin.com/in/katja-linnea-serritzlew/" target="_blank" rel="noopener noreferrer"> LinkedIn </a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Phone number:</strong></td>
+                                        <td><a href="tel:+4541300003">+4541300003</a></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email:</strong></td>
+                                        <td><a href="mailto:katja.serritzlew@alten.dk">katja.serritzlew@alten.dk</a></td>
+                                    </tr>
+                                </tbody>
                             </Table>
                         </Col>
                     </Row>
