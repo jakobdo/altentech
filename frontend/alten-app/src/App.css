@@ -148,3 +148,10 @@ footer h5 {
 .light-blue {
     color: #039be5;
 }
+
+    @media only screen and (min-width: 993px) {
+        .parallax img {
+            max-height: 170%; /* or higher percentages. It's up to your taste */
+        }
+    }
+
