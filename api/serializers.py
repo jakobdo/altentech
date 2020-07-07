@@ -46,7 +46,10 @@ class ConsultantSimpleSerializer(serializers.ModelSerializer):
 
 # Full serializers
 class ProjectSerializer(serializers.ModelSerializer):
-    industry = serializers.CharField(source='industry.name')
+    industry = serializers.CharField(
+        source='industry.name',
+        default=None
+    )
     consultants = ConsultantSimpleSerializer(many=True)
     technologies = TechnologySimpleSerializer(many=True)
 
