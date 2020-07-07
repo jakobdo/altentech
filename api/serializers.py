@@ -9,6 +9,18 @@ from technology.models import Technology
 
 
 # Simplified serializers
+class ClientSimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Client
+        fields = ['name', 'slug']
+
+
+class IndustrySimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Industry
+        fields = ['name', 'slug']
+
+
 class TechnologySimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Technology
@@ -46,10 +58,8 @@ class ConsultantSimpleSerializer(serializers.ModelSerializer):
 
 # Full serializers
 class ProjectSerializer(serializers.ModelSerializer):
-    industry = serializers.CharField(
-        source='industry.name',
-        default=None
-    )
+    client = ClientSimpleSerializer()
+    industry = IndustrySimpleSerializer()
     consultants = ConsultantSimpleSerializer(many=True)
     technologies = TechnologySimpleSerializer(many=True)
 
@@ -69,13 +79,13 @@ class ProjectSerializer(serializers.ModelSerializer):
 class ClientSerializer(serializers.ModelSerializer):
     class Meta:
         model = Client
-        fields = ['pk', 'name', 'slug', 'description', 'url', 'image']
+        fields = ['name', 'slug', 'description', 'url', 'image']
 
 
 class IndustrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Industry
-        fields = ['pk', 'name', 'slug', 'description']
+        fields = ['name', 'slug', 'description']
 
 
 class TagSerializer(serializers.ModelSerializer):
