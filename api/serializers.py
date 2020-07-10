@@ -4,7 +4,7 @@ from stdimage_serializer.fields import StdImageField
 from client.models import Client, Industry
 from employee.models import Employee, Experience, TechnologyLevel
 from project.models import Project
-from tag.models import Tag
+from tag.models import ServiceArea, Tag
 from technology.models import Technology
 
 
@@ -54,6 +54,14 @@ class ConsultantSimpleSerializer(serializers.ModelSerializer):
 
     def get_fullname(self, obj):
         return obj.get_full_name()
+
+
+class ServiceAreaSimpleSerializer(serializers.ModelSerializer):
+    image = StdImageField()
+
+    class Meta:
+        model = ServiceArea
+        fields = ['name', 'slug', 'image']
 
 
 # Full serializers
@@ -149,3 +157,13 @@ class ConsultantSerializer(serializers.ModelSerializer):
 
     def get_fullname(self, obj):
         return obj.get_full_name()
+
+
+class ServiceAreaSerializer(serializers.ModelSerializer):
+    image = StdImageField()
+    projects = ProjectSimpleSerializer(many=True)
+    technologies = TechnologySimpleSerializer(many=True)
+
+    class Meta:
+        model = ServiceArea
+        fields = ['name', 'slug', 'image', 'projects', 'technologies']

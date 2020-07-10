@@ -24,8 +24,8 @@ class Project(models.Model):
         blank=True,
         null=True
     )
-    service_area = models.ManyToManyField(ServiceArea, related_name='service_projects')
-    technologies = models.ManyToManyField(Technology)
+    service_areas = models.ManyToManyField(ServiceArea, related_name='projects')
+    technologies = models.ManyToManyField(Technology, related_name='projects')
     consultants = models.ManyToManyField(Employee, related_name='projects')
 
     def __str__(self):

@@ -1,10 +1,12 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from api.serializers import (ConsultantSerializer, ProjectSerializer,
-                             TagSerializer, TechnologySerializer)
+                             ServiceAreaSerializer,
+                             ServiceAreaSimpleSerializer, TagSerializer,
+                             TechnologySerializer)
 from employee.models import Employee
 from project.models import Project
-from tag.models import Tag
+from tag.models import ServiceArea, Tag
 from technology.models import Technology
 
 
@@ -64,4 +66,15 @@ class TechnologyList(ListAPIView):
 class TechnologyDetail(RetrieveAPIView):
     queryset = Technology.objects.all()
     serializer_class = TechnologySerializer
+    lookup_field = 'slug'
+
+
+class AreaList(ListAPIView):
+    queryset = ServiceArea.objects.all()
+    serializer_class = ServiceAreaSimpleSerializer
+
+
+class AreaDetail(RetrieveAPIView):
+    queryset = ServiceArea.objects.all()
+    serializer_class = ServiceAreaSerializer
     lookup_field = 'slug'

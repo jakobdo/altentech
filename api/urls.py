@@ -15,4 +15,6 @@ urlpatterns = [
     path('projects/<slug:slug>/', views.ProjectDetail.as_view(), name="api-project-detail"),
     path('technologies/', views.TechnologyList.as_view(), name="api-technology-list"),
     path('technologies/<slug:slug>/', views.TechnologyDetail.as_view(), name="api-technology-detail"),
+    path('areas/', views.AreaList.as_view(), name="api-area-list"),
+    path('areas/<slug:slug>/', views.AreaDetail.as_view(), name="api-area-detail"),
 ]
