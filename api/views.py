@@ -69,12 +69,12 @@ class TechnologyDetail(RetrieveAPIView):
     lookup_field = 'slug'
 
 
-class AreaList(ListAPIView):
+class ServiceList(ListAPIView):
     queryset = ServiceArea.objects.all()
     serializer_class = ServiceAreaSimpleSerializer
 
 
-class AreaDetail(RetrieveAPIView):
+class ServiceDetail(RetrieveAPIView):
     queryset = ServiceArea.objects.all()
     serializer_class = ServiceAreaSerializer
     lookup_field = 'slug'
