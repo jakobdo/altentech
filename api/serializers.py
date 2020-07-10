@@ -104,10 +104,11 @@ class TagSerializer(serializers.ModelSerializer):
 
 class TechnologySerializer(serializers.ModelSerializer):
     consultants = ConsultantSimpleSerializer(many=True)
+    projects = ProjectSimpleSerializer(many=True)
 
     class Meta:
         model = Technology
-        fields = ['name', 'slug', 'description', 'consultants']
+        fields = ['name', 'slug', 'description', 'consultants', 'projects']
 
 
 class TechnologyLevelSerializer(serializers.ModelSerializer):
